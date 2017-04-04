@@ -1,0 +1,2230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ReslandModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACTIVITY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JOB_CANDIDATE_ID" Type="Int32" Nullable="false" />
+    <Property Name="CONTACT_MODE_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ACTIVITY_TYPE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOTE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ACTIVITY_LKUP">
+    <Key>
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="TYPE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LEVEL" Type="Int32" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ADDRESS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ADDR1" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDR2" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ADDR3" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="POSTAL_CD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FAX" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CANDIDATEs" Relationship="Self.FK_CANDIDATE_ADDRESS" FromRole="ADDRESS" ToRole="CANDIDATE" />
+    <NavigationProperty Name="COMPANies" Relationship="Self.FK_COMPANY_ADDRESS" FromRole="ADDRESS" ToRole="COMPANY" />
+    <NavigationProperty Name="CONTRACTORs" Relationship="Self.FK_CONTRACTOR_ADDRESS" FromRole="ADDRESS" ToRole="CONTRACTOR" />
+    <NavigationProperty Name="EMPLOYEEs" Relationship="Self.FK_EMPLOYEE_ADDRESS" FromRole="ADDRESS" ToRole="EMPLOYEE" />
+    <NavigationProperty Name="SUBSCRIBERs" Relationship="Self.FK_SUBSCRIBER_ADDRESS" FromRole="ADDRESS" ToRole="SUBSCRIBER" />
+  </EntityType>
+  <EntityType Name="ARTIFACT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ARTIFACT_TYPE" Type="Int32" Nullable="false" />
+    <Property Name="RES_ID" Type="Int32" Nullable="false" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PATH" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CONTENT" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ARTIFACT_TYPE_LKUP" Relationship="Self.FK_ARTIFACT_ARTIFACT_TYPE_LKUP" FromRole="ARTIFACT" ToRole="ARTIFACT_TYPE_LKUP" />
+  </EntityType>
+  <EntityType Name="ARTIFACT_TYPE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RES_ID" Type="Int32" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ARTIFACTs" Relationship="Self.FK_ARTIFACT_ARTIFACT_TYPE_LKUP" FromRole="ARTIFACT_TYPE_LKUP" ToRole="ARTIFACT" />
+  </EntityType>
+  <EntityType Name="CANDIDATE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SALUTATION" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MIDDLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SOCIAL_EMAIL_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SEX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="ADDR_ID" Type="Int32" Nullable="false" />
+    <Property Name="REC_COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="RES_ID" Type="Int32" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="REF_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SKILL_ID" Type="Int32" />
+    <Property Name="NOTIFICATION_ID" Type="Int32" Nullable="false" />
+    <Property Name="SOURCE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SOURCE_REF_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMPLR_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OWNER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMPLR_PHONE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HOT" Type="Boolean" Nullable="false" />
+    <Property Name="EMP_TYPE_NEEDED" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CURR_PAY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DESIRED_PAY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_AVAILABLE" Type="DateTime" Precision="3" />
+    <Property Name="RELOCATE" Type="Boolean" Nullable="false" />
+    <Property Name="RELOC_PREFERENCES" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ETHINIC_TYPE" Type="Int32" />
+    <Property Name="RESIDENCY" Type="Int32" />
+    <Property Name="VETERAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WEBSITE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DISABILITY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ADDRESS" Relationship="Self.FK_CANDIDATE_ADDRESS" FromRole="CANDIDATE" ToRole="ADDRESS" />
+    <NavigationProperty Name="COMPANY" Relationship="Self.FK_CANDIDATE_COMPANY" FromRole="CANDIDATE" ToRole="COMPANY" />
+    <NavigationProperty Name="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" Relationship="Self.FK_CANDIDATE_ID" FromRole="CANDIDATE" ToRole="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" />
+    <NavigationProperty Name="NOTIFICATION" Relationship="Self.FK_CANDIDATE_NOTIFICATION" FromRole="CANDIDATE" ToRole="NOTIFICATION" />
+    <NavigationProperty Name="SKILL" Relationship="Self.FK_CANDIDATE_SKILL" FromRole="CANDIDATE" ToRole="SKILL" />
+  </EntityType>
+  <EntityType Name="CANDIDATE_SOCIALMEDIA_SELECTED_URLS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CANDIDATE_ID" Type="Int32" />
+    <Property Name="SOCIALMEDIA_SELECTED" Type="Int32" />
+    <Property Name="SOCIALNETWORKING_URL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="CR_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CANDIDATE" Relationship="Self.FK_CANDIDATE_ID" FromRole="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" ToRole="CANDIDATE" />
+    <NavigationProperty Name="SOCIALMEDIA_LKUP" Relationship="Self.FK_SOCIALMEDIA_SELECTED_ID" FromRole="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" ToRole="SOCIALMEDIA_LKUP" />
+  </EntityType>
+  <EntityType Name="CATEGORY_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CATEGORY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CLIENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDR_ID" Type="Int32" Nullable="false" />
+    <Property Name="PHONE_NUM1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE_NUM2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FAX_NUM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="EIN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DOMAIN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WEBSITE" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_TECHNOLOGIES" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="NOTES" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="COMPANY_CLIENTS" Relationship="Self.FK_COMPANY_CLIENTS_CLIENT" FromRole="CLIENT" ToRole="COMPANY_CLIENTS" />
+    <NavigationProperty Name="CONTRACTORs" Relationship="Self.FK_CONTRACTOR_CLIENT" FromRole="CLIENT" ToRole="CONTRACTOR" />
+    <NavigationProperty Name="EMPLOYEEs" Relationship="Self.FK_EMPLOYEE_CLIENT" FromRole="CLIENT" ToRole="EMPLOYEE" />
+  </EntityType>
+  <EntityType Name="COMPANY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DBA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CATEGORY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WEBSITE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ADDR_ID" Type="Int32" Nullable="false" />
+    <Property Name="NOTIFICATION_ID" Type="Int32" />
+    <Property Name="TAX_ID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TECH_USED" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NOTES" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ADDRESS" Relationship="Self.FK_COMPANY_ADDRESS" FromRole="COMPANY" ToRole="ADDRESS" />
+    <NavigationProperty Name="CANDIDATEs" Relationship="Self.FK_CANDIDATE_COMPANY" FromRole="COMPANY" ToRole="CANDIDATE" />
+    <NavigationProperty Name="SIGNATUREs" Relationship="Self.FK_COMP_ID" FromRole="COMPANY" ToRole="SIGNATURE" />
+    <NavigationProperty Name="COMPANY_CLIENTS" Relationship="Self.FK_COMPANY_CLIENTS_COMPANY" FromRole="COMPANY" ToRole="COMPANY_CLIENTS" />
+    <NavigationProperty Name="NOTIFICATION" Relationship="Self.FK_COMPANY_NOTIFICATION" FromRole="COMPANY" ToRole="NOTIFICATION" />
+    <NavigationProperty Name="CONTRACTORs" Relationship="Self.FK_CONTRACTOR_COMPANY" FromRole="COMPANY" ToRole="CONTRACTOR" />
+    <NavigationProperty Name="EMPLOYEEs" Relationship="Self.FK_EMPLOYEE_COMPANY" FromRole="COMPANY" ToRole="EMPLOYEE" />
+    <NavigationProperty Name="RESOURCE_PROFILE" Relationship="Self.FK_RESOURCE_PROFILE_COMPANY" FromRole="COMPANY" ToRole="RESOURCE_PROFILE" />
+    <NavigationProperty Name="SUBSCRIBERs" Relationship="Self.FK_SUBSCRIBER_COMPANY" FromRole="COMPANY" ToRole="SUBSCRIBER" />
+    <NavigationProperty Name="SUBSCRIPTIONs" Relationship="Self.fk_SUBSCRIPTION_COMPANY" FromRole="COMPANY" ToRole="SUBSCRIPTION" />
+  </EntityType>
+  <EntityType Name="COMPANY_CLIENTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENT_ID" Type="Int32" Nullable="false" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="IS_ACTIVATED" Type="Boolean" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <Property Name="STAT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CLIENT" Relationship="Self.FK_COMPANY_CLIENTS_CLIENT" FromRole="COMPANY_CLIENTS" ToRole="CLIENT" />
+    <NavigationProperty Name="COMPANY" Relationship="Self.FK_COMPANY_CLIENTS_COMPANY" FromRole="COMPANY_CLIENTS" ToRole="COMPANY" />
+  </EntityType>
+  <EntityType Name="COMPANY_HOLIDAY">
+    <Key>
+      <PropertyRef Name="COMP_ID" />
+      <PropertyRef Name="HOLIDAY_DT" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="HOLIDAY_DT" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CONTACT_MODE_LKUP">
+    <Key>
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCR" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CONTRACTOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MIDDLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SEX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="ADDR_ID" Type="Int32" Nullable="false" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="EMPLR_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMPLR_PHONE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_CONTRACTOR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CLIENT_ID" Type="Int32" Nullable="false" />
+    <Property Name="SKILL_ID" Type="Int32" />
+    <Property Name="NOTIFICATION_ID" Type="Int32" Nullable="false" />
+    <Property Name="PROSPECTIVE_EMP" Type="Boolean" />
+    <Property Name="EMP_TYPE_NEEDED" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PYMT_PERIOD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CURR_PAY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DESIRED_PAY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_AVAILABLE" Type="DateTime" Precision="3" />
+    <Property Name="REF_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RELOCATE" Type="Boolean" Nullable="false" />
+    <Property Name="RELOC_PREFERENCES" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ETHINIC_TYPE" Type="Int32" />
+    <Property Name="RESIDENCY" Type="Int32" />
+    <Property Name="VETERAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DISABILITY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ADDRESS" Relationship="Self.FK_CONTRACTOR_ADDRESS" FromRole="CONTRACTOR" ToRole="ADDRESS" />
+    <NavigationProperty Name="CLIENT" Relationship="Self.FK_CONTRACTOR_CLIENT" FromRole="CONTRACTOR" ToRole="CLIENT" />
+    <NavigationProperty Name="COMPANY" Relationship="Self.FK_CONTRACTOR_COMPANY" FromRole="CONTRACTOR" ToRole="COMPANY" />
+    <NavigationProperty Name="CONTRACTOR1" Relationship="Self.FK_CONTRACTOR_CONTRACTOR" FromRole="CONTRACTOR" ToRole="CONTRACTOR1" />
+    <NavigationProperty Name="CONTRACTOR2" Relationship="Self.FK_CONTRACTOR_CONTRACTOR" FromRole="CONTRACTOR1" ToRole="CONTRACTOR" />
+    <NavigationProperty Name="NOTIFICATION" Relationship="Self.FK_CONTRACTOR_NOTIFICATION" FromRole="CONTRACTOR" ToRole="NOTIFICATION" />
+    <NavigationProperty Name="SKILL" Relationship="Self.FK_CONTRACTOR_SKILL" FromRole="CONTRACTOR" ToRole="SKILL" />
+  </EntityType>
+  <EntityType Name="COUNTRY_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CODE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SUN_HOL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MON_HOL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TUE_HOL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="WED_HOL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="THU_HOL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FRI_HOL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SAT_HOL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="DURATION_LKUP">
+    <Key>
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SCHEDULER_FREQUENCY" Relationship="Self.fk_SCHEDULER_FREQUENCY_LKUP3" FromRole="DURATION_LKUP" ToRole="SCHEDULER_FREQUENCY" />
+  </EntityType>
+  <EntityType Name="EMAIL_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SESSION_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_TO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_FROM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TEMPLATETYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="REPLACED_TEXT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MIDDLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COMP_EMP_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SEX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ADDR_ID" Type="Int32" Nullable="false" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="PLACED_AT_CLIENT" Type="Boolean" />
+    <Property Name="CLIENT_ID" Type="Int32" />
+    <Property Name="NOTIFICATION_ID" Type="Int32" Nullable="false" />
+    <Property Name="RELOCATE" Type="Boolean" Nullable="false" />
+    <Property Name="RELOC_PREFERENCES" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_EMPLOYER" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SKILL_ID" Type="Int32" />
+    <Property Name="ETHINIC_TYPE" Type="Int32" />
+    <Property Name="RESIDENCY" Type="Int32" />
+    <Property Name="VETERAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DISABILITY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ADDRESS" Relationship="Self.FK_EMPLOYEE_ADDRESS" FromRole="EMPLOYEE" ToRole="ADDRESS" />
+    <NavigationProperty Name="CLIENT" Relationship="Self.FK_EMPLOYEE_CLIENT" FromRole="EMPLOYEE" ToRole="CLIENT" />
+    <NavigationProperty Name="COMPANY" Relationship="Self.FK_EMPLOYEE_COMPANY" FromRole="EMPLOYEE" ToRole="COMPANY" />
+    <NavigationProperty Name="NOTIFICATION" Relationship="Self.FK_EMPLOYEE_NOTIFICATION" FromRole="EMPLOYEE" ToRole="NOTIFICATION" />
+    <NavigationProperty Name="SKILL" Relationship="Self.FK_EMPLOYEE_SKILL" FromRole="EMPLOYEE" ToRole="SKILL" />
+  </EntityType>
+  <EntityType Name="ETHINIC_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="DESCR" />
+      <PropertyRef Name="IS_DELETED" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DESCR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="FEATURE_ACCESS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FEATURE_ID" Type="Int32" Nullable="false" />
+    <Property Name="SCREEN_ID" Type="Int32" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="RL_FEATURE" Relationship="Self.fk_FEATURE_ACCESS_RL_FEATURE" FromRole="FEATURE_ACCESS" ToRole="RL_FEATURE" />
+    <NavigationProperty Name="SCREEN_ACTION" Relationship="Self.fk_FEATURE_ACCESS_SCREEN_ACTION" FromRole="FEATURE_ACCESS" ToRole="SCREEN_ACTION" />
+  </EntityType>
+  <EntityType Name="FEATURE_SCREEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FEATURE_ID" Type="Int32" Nullable="false" />
+    <Property Name="SCREEN_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DT_CR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="FREQUENCY_LKUP">
+    <Key>
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SCHEDULER_FREQUENCY" Relationship="Self.fk_SCHEDULER_FREQUENCY_LKUP2" FromRole="FREQUENCY_LKUP" ToRole="SCHEDULER_FREQUENCY" />
+  </EntityType>
+  <EntityType Name="HOURS_LOGGED">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIMESHEET_ID" Type="Int32" Nullable="false" />
+    <Property Name="PROJ_ID" Type="Int32" Nullable="false" />
+    <Property Name="DESCR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SUN_HRS" Type="Int32" Nullable="false" />
+    <Property Name="MON_HRS" Type="Int32" Nullable="false" />
+    <Property Name="TUE_HRS" Type="Int32" Nullable="false" />
+    <Property Name="WED_HRS" Type="Int32" Nullable="false" />
+    <Property Name="THU_HRS" Type="Int32" Nullable="false" />
+    <Property Name="FRI_HRS" Type="Int32" Nullable="false" />
+    <Property Name="SAT_HRS" Type="Int32" Nullable="false" />
+    <Property Name="WORKED_ON_HOLIDAY" Type="Boolean" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PROJECT" Relationship="Self.FK_HOURS_LOGGED_PROJECT" FromRole="HOURS_LOGGED" ToRole="PROJECT" />
+    <NavigationProperty Name="TIMESHEET" Relationship="Self.FK_HOURS_LOGGED_TIMESHEET" FromRole="HOURS_LOGGED" ToRole="TIMESHEET" />
+  </EntityType>
+  <EntityType Name="INVOICE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SUBSCRIPTION_ID" Type="Int32" Nullable="false" />
+    <Property Name="SUBSCR_PKG_ID" Type="Int32" Nullable="false" />
+    <Property Name="START_DT" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="END_DT" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AMT_DUE" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="AMT_PAID" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="AMT_ADJ" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="DISCOUNT_ADJ" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="DESCR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="STAT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SUBSCRIPTION" Relationship="Self.fk_INVOICE_SUBSCRIPTION" FromRole="INVOICE" ToRole="SUBSCRIPTION" />
+    <NavigationProperty Name="SUBSCRIPTION_PACKAGE" Relationship="Self.fk_INVOICE_SUBSCRIPTION_PACKAGE" FromRole="INVOICE" ToRole="SUBSCRIPTION_PACKAGE" />
+  </EntityType>
+  <EntityType Name="JOB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMP_ID" Type="Int32" />
+    <Property Name="POSTED_BY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="POSTED_BY_ID" Type="Int32" Nullable="false" />
+    <Property Name="CONTACT_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONTACT_PHONE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DESCR" Type="String" MaxLength="5120" FixedLength="false" Unicode="false" />
+    <Property Name="PREREQUISITES" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="JOB_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DURATION" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="POST_DT" Type="DateTime" Precision="3" />
+    <Property Name="POST_END_DT" Type="DateTime" Precision="3" />
+    <Property Name="POSITIONS_CNT" Type="Int32" Nullable="false" />
+    <Property Name="CATEGORY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MAX_RATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIN_RATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <Property Name="SKILL_ID" Type="Int32" />
+    <Property Name="PERKS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JOB_ID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SOURCE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SALARY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HOT" Type="Boolean" />
+    <Property Name="PUBLISH" Type="Boolean" />
+    <Property Name="CLIENT_ID" Type="Int32" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RECRUITER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VENDOR_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SKILL" Relationship="Self.FK_JOB_POSTING_SKILL" FromRole="JOB" ToRole="SKILL" />
+    <NavigationProperty Name="JOB_POSTING" Relationship="Self.FK_REQUIREMENT_POSTING_JOB_POSTING" FromRole="JOB" ToRole="JOB_POSTING" />
+  </EntityType>
+  <EntityType Name="JOB_APPLICATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JOB_POSTING_ID" Type="Int32" Nullable="false" />
+    <Property Name="RES_ID" Type="Int32" Nullable="false" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APPLIED_DT" Type="DateTime" Precision="3" />
+    <Property Name="REQ_RATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RESUME" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="NOTES" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="JOB_CANDIDATE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JOB_ID" Type="Int32" Nullable="false" />
+    <Property Name="CANDIDATE_ID" Type="Int32" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="JOB_POSTING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JOB_ID" Type="Int32" Nullable="false" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="SUB_ID" Type="Int32" />
+    <Property Name="STATUS" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="JOB" Relationship="Self.FK_REQUIREMENT_POSTING_JOB_POSTING" FromRole="JOB_POSTING" ToRole="JOB" />
+  </EntityType>
+  <EntityType Name="JOB_TYPE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="NOTIFICATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOTIFY_BY_EMAIL" Type="Boolean" />
+    <Property Name="PRI_EMAIL_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SEC_EMAIL_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIFY_BY_PHONE" Type="Boolean" />
+    <Property Name="PHONE_NUM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BEST_TIME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CANDIDATEs" Relationship="Self.FK_CANDIDATE_NOTIFICATION" FromRole="NOTIFICATION" ToRole="CANDIDATE" />
+    <NavigationProperty Name="COMPANies" Relationship="Self.FK_COMPANY_NOTIFICATION" FromRole="NOTIFICATION" ToRole="COMPANY" />
+    <NavigationProperty Name="CONTRACTORs" Relationship="Self.FK_CONTRACTOR_NOTIFICATION" FromRole="NOTIFICATION" ToRole="CONTRACTOR" />
+    <NavigationProperty Name="EMPLOYEEs" Relationship="Self.FK_EMPLOYEE_NOTIFICATION" FromRole="NOTIFICATION" ToRole="EMPLOYEE" />
+    <NavigationProperty Name="SUBSCRIBERs" Relationship="Self.FK_SUBSCRIBER_NOTIFICATION" FromRole="NOTIFICATION" ToRole="SUBSCRIBER" />
+  </EntityType>
+  <EntityType Name="PACKAGE_FEATURE">
+    <Key>
+      <PropertyRef Name="SUBSCR_PKG_ID" />
+      <PropertyRef Name="FEATURE_ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SUBSCR_PKG_ID" Type="Int32" Nullable="false" />
+    <Property Name="FEATURE_ID" Type="Int32" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PAYMENT_PERIOD_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCR" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PAYMENT_TYPE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCR" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PERIOD_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCR" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COMMENT" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="POSTING_SUBMISSION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="POSTING_ID" Type="Int32" Nullable="false" />
+    <Property Name="POSTING_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RES_ID" Type="Int32" Nullable="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="CR_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="START_DT" Type="DateTime" Precision="3" />
+    <Property Name="END_DT" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SUBMISSION_STATUS" Relationship="Self.FK_SUBMISSION_STATUS_SUBSCRIBER_RESOURCE_SUBMISSION" FromRole="POSTING_SUBMISSION" ToRole="SUBMISSION_STATUS" />
+  </EntityType>
+  <EntityType Name="PROCESSING_STATE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PROJECT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MANAGER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MGR_PHONE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="START_DT" Type="DateTime" Precision="3" />
+    <Property Name="END_DT" Type="DateTime" Precision="3" />
+    <Property Name="BUDGET" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="TECH_USED" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CLIENT_PROJECT" Type="Boolean" Nullable="false" />
+    <Property Name="SPONSOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="NOTES" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <Property Name="COMP_ID" Type="Int32" />
+    <NavigationProperty Name="HOURS_LOGGED" Relationship="Self.FK_HOURS_LOGGED_PROJECT" FromRole="PROJECT" ToRole="HOURS_LOGGED" />
+    <NavigationProperty Name="PROJECT_RESOURCE" Relationship="Self.FK_PROJECT_RESOURCE_PROJECT" FromRole="PROJECT" ToRole="PROJECT_RESOURCE" />
+  </EntityType>
+  <EntityType Name="PROJECT_RESOURCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROJ_ID" Type="Int32" Nullable="false" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RES_COUNT" Type="Int32" />
+    <Property Name="SKILLS_NEEDED" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EXP_RATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PROJECT" Relationship="Self.FK_PROJECT_RESOURCE_PROJECT" FromRole="PROJECT_RESOURCE" ToRole="PROJECT" />
+  </EntityType>
+  <EntityType Name="QUESTION_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QUESTION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RESIDENCY_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCR" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RESOURCE_PRIVILEGE_LKUP">
+    <Key>
+      <PropertyRef Name="RES_TYPE" />
+      <PropertyRef Name="PRIVILEGE" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRIVILEGE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RESOURCE_PROFILE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="RES_ID" Type="Int32" Nullable="false" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMPLOYMENT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESIGNATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EXPERIENCE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="WORK_COMPANY_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="WORK_LOCATION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="START_DT" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="END_DT" Type="DateTime" Precision="3" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="COMPANY" Relationship="Self.FK_RESOURCE_PROFILE_COMPANY" FromRole="RESOURCE_PROFILE" ToRole="COMPANY" />
+    <NavigationProperty Name="RESOURCE_PROFILE1" Relationship="Self.FK_RESOURCE_PROFILE_RESOURCE_PROFILE" FromRole="RESOURCE_PROFILE" ToRole="RESOURCE_PROFILE1" />
+    <NavigationProperty Name="RESOURCE_PROFILE2" Relationship="Self.FK_RESOURCE_PROFILE_RESOURCE_PROFILE" FromRole="RESOURCE_PROFILE1" ToRole="RESOURCE_PROFILE" />
+  </EntityType>
+  <EntityType Name="RESOURCE_TYPE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADMIN_ACCESS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LOGIN_ACCESS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TIMESHEET_ACCESS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RL_FEATURE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FEATURE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AVAILABLE" Type="Boolean" Nullable="false" />
+    <Property Name="COMMENT" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <Property Name="COST" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <NavigationProperty Name="FEATURE_ACCESS" Relationship="Self.fk_FEATURE_ACCESS_RL_FEATURE" FromRole="RL_FEATURE" ToRole="FEATURE_ACCESS" />
+  </EntityType>
+  <EntityType Name="RL_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SESSION_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ACTION" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PREV_STATE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NOTES" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RL_USER_LOG_DETAILS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RL_USER_ID" Type="Int32" Nullable="false" />
+    <Property Name="USER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LOGIN_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LOGOUT_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IP_ADDR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BROWSER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RL_USER_LOGIN_ATTEMPT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LOGIN_ATTEMPT_CNT" Type="Int32" Nullable="false" />
+    <Property Name="MAX_ATTEMPT_CNT" Type="Int32" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RL_USER_TRACK_LOGGING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LOGIN_TIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LOGOUT_TIME" Type="DateTime" Precision="3" />
+    <Property Name="HOW_LOGOUT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IP_ADDR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BROWSER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <Property Name="SESSION_ID" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RL_USERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PWD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESCR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIFICATION_ID" Type="Int32" />
+    <Property Name="COMP_ID" Type="Int32" />
+    <Property Name="USER_ACTIVATED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ACCT_LOCKED" Type="Boolean" Nullable="false" />
+    <Property Name="QNO_1" Type="Int32" />
+    <Property Name="ANS_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HNT_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QNO_2" Type="Int32" />
+    <Property Name="ANS_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HNT_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QNO_3" Type="Int32" />
+    <Property Name="ANS_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HNT_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SIGNATUREs" Relationship="Self.FK_RES_ID" FromRole="RL_USERS" ToRole="SIGNATURE" />
+  </EntityType>
+  <EntityType Name="ROLE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCR" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SCHEDULER_EXECUTION_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMMUNICATION_MODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONTACT_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="RES_ID" Type="Int32" Nullable="false" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SCHEDULER_ID" Type="Int32" Nullable="false" />
+    <Property Name="EXECUTION_START_TIME" Type="DateTime" Precision="3" />
+    <Property Name="EXECUTION_END_TIME" Type="DateTime" Precision="3" />
+    <Property Name="STAT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="STAT_MSG" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SCHEDULER_FREQUENCY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="SCHEDULER_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FREQUENCY_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TRIGGER_START_TIME" Type="Time" Precision="7" />
+    <Property Name="INTERVAL" Type="Int32" />
+    <Property Name="INTERVAL_DURATION" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="SCHEDULE_SUN" Type="Boolean" Nullable="false" />
+    <Property Name="SCHEDULE_MON" Type="Boolean" Nullable="false" />
+    <Property Name="SCHEDULE_TUE" Type="Boolean" Nullable="false" />
+    <Property Name="SCHEDULE_WED" Type="Boolean" Nullable="false" />
+    <Property Name="SCHEDULE_THU" Type="Boolean" Nullable="false" />
+    <Property Name="SCHEDULE_FRI" Type="Boolean" Nullable="false" />
+    <Property Name="SCHEDULE_SAT" Type="Boolean" Nullable="false" />
+    <Property Name="STAT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DURATION_LKUP" Relationship="Self.fk_SCHEDULER_FREQUENCY_LKUP3" FromRole="SCHEDULER_FREQUENCY" ToRole="DURATION_LKUP" />
+    <NavigationProperty Name="FREQUENCY_LKUP" Relationship="Self.fk_SCHEDULER_FREQUENCY_LKUP2" FromRole="SCHEDULER_FREQUENCY" ToRole="FREQUENCY_LKUP" />
+    <NavigationProperty Name="SCHEDULER_TYPE_LKUP" Relationship="Self.fk_SCHEDULER_FREQUENCY_LKUP1" FromRole="SCHEDULER_FREQUENCY" ToRole="SCHEDULER_TYPE_LKUP" />
+  </EntityType>
+  <EntityType Name="SCHEDULER_TYPE_LKUP">
+    <Key>
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SCHEDULER_FREQUENCY" Relationship="Self.fk_SCHEDULER_FREQUENCY_LKUP1" FromRole="SCHEDULER_TYPE_LKUP" ToRole="SCHEDULER_FREQUENCY" />
+  </EntityType>
+  <EntityType Name="SCREEN_ACTION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SCREEN_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ACTION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="FEATURE_ACCESS" Relationship="Self.fk_FEATURE_ACCESS_SCREEN_ACTION" FromRole="SCREEN_ACTION" ToRole="FEATURE_ACCESS" />
+  </EntityType>
+  <EntityType Name="SETTING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SESSION_TIMEOUT_IN_MINS" Type="Int32" Nullable="false" />
+    <Property Name="SMTP_CLIENT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SMTP_PORT" Type="Int32" Nullable="false" />
+    <Property Name="ENABLE_SSL" Type="Boolean" Nullable="false" />
+    <Property Name="USE_DEFAULT_CREDENTIALS" Type="Boolean" Nullable="false" />
+    <Property Name="ADDR1_ID" Type="Int32" />
+    <Property Name="ADDR2_ID" Type="Int32" />
+    <Property Name="PUBLIC_MSG" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="MSG_EFF_FROM" Type="DateTime" Precision="3" />
+    <Property Name="MSG_EFF_TO" Type="DateTime" Precision="3" />
+    <Property Name="STAT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SIGNATURE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMP_ID" Type="Int32" />
+    <Property Name="RES_ID" Type="Int32" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SIGNATURE_CONTENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SIGNATURE_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DEFAULT" Type="Boolean" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="COMPANY" Relationship="Self.FK_COMP_ID" FromRole="SIGNATURE" ToRole="COMPANY" />
+    <NavigationProperty Name="RL_USERS" Relationship="Self.FK_RES_ID" FromRole="SIGNATURE" ToRole="RL_USERS" />
+  </EntityType>
+  <EntityType Name="SKILL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TECH_SKILLS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SOFT_SKILLS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CANDIDATEs" Relationship="Self.FK_CANDIDATE_SKILL" FromRole="SKILL" ToRole="CANDIDATE" />
+    <NavigationProperty Name="CONTRACTORs" Relationship="Self.FK_CONTRACTOR_SKILL" FromRole="SKILL" ToRole="CONTRACTOR" />
+    <NavigationProperty Name="EMPLOYEEs" Relationship="Self.FK_EMPLOYEE_SKILL" FromRole="SKILL" ToRole="EMPLOYEE" />
+    <NavigationProperty Name="JOBs" Relationship="Self.FK_JOB_POSTING_SKILL" FromRole="SKILL" ToRole="JOB" />
+  </EntityType>
+  <EntityType Name="SKILL_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DT_CR" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SMTP_CLIENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MSG_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SMTP_CLIENT1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SMTP_PORT" Type="Int32" Nullable="false" />
+    <Property Name="ENABLE_SSL" Type="Boolean" Nullable="false" />
+    <Property Name="REQ_AUTHENTICATION" Type="Boolean" />
+    <Property Name="USER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PWD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SOCIALMEDIA_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SOCIALMEDIA_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SOCIALMEDIA_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="CR_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" Relationship="Self.FK_SOCIALMEDIA_SELECTED_ID" FromRole="SOCIALMEDIA_LKUP" ToRole="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" />
+  </EntityType>
+  <EntityType Name="SOURCE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SOURCE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WEBSITE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="STATUS_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SUBMISSION_STATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="POSTING_SUBMISSION_ID" Type="Int32" Nullable="false" />
+    <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INTERVIEW_DT" Type="DateTime" Precision="3" />
+    <Property Name="INTERVIEW_TIME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="INTERVIEWER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LOCATION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="COMMENTS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="INTERVIEWER_RATING" Type="Int32" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="POSTING_SUBMISSION" Relationship="Self.FK_SUBMISSION_STATUS_SUBSCRIBER_RESOURCE_SUBMISSION" FromRole="SUBMISSION_STATUS" ToRole="POSTING_SUBMISSION" />
+  </EntityType>
+  <EntityType Name="SUBSCRIBER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MIDDLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDR_ID" Type="Int32" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="NOTIFICATION_ID" Type="Int32" Nullable="false" />
+    <Property Name="EMAIL_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ROLE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ADDRESS" Relationship="Self.FK_SUBSCRIBER_ADDRESS" FromRole="SUBSCRIBER" ToRole="ADDRESS" />
+    <NavigationProperty Name="COMPANY" Relationship="Self.FK_SUBSCRIBER_COMPANY" FromRole="SUBSCRIBER" ToRole="COMPANY" />
+    <NavigationProperty Name="NOTIFICATION" Relationship="Self.FK_SUBSCRIBER_NOTIFICATION" FromRole="SUBSCRIBER" ToRole="NOTIFICATION" />
+  </EntityType>
+  <EntityType Name="SUBSCRIPTION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="SUBSCR_PKG_ID" Type="Int32" Nullable="false" />
+    <Property Name="TRIAL_START_DT" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EFF_FROM" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EFF_TO" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PYMT_NUM" Type="Int32" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="COMPANY" Relationship="Self.fk_SUBSCRIPTION_COMPANY" FromRole="SUBSCRIPTION" ToRole="COMPANY" />
+    <NavigationProperty Name="INVOICEs" Relationship="Self.fk_INVOICE_SUBSCRIPTION" FromRole="SUBSCRIPTION" ToRole="INVOICE" />
+    <NavigationProperty Name="SUBSCRIPTION_PACKAGE" Relationship="Self.fk_SUBSCRIPTION_SUBSCRIPTION_PACKAGE" FromRole="SUBSCRIPTION" ToRole="SUBSCRIPTION_PACKAGE" />
+  </EntityType>
+  <EntityType Name="SUBSCRIPTION_PACKAGE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SPKG_PERIOD_ID" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PERIOD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USD_COST" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="EUR_COST" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="UK_COST" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="INR_COST" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="INVOICEs" Relationship="Self.fk_INVOICE_SUBSCRIPTION_PACKAGE" FromRole="SUBSCRIPTION_PACKAGE" ToRole="INVOICE" />
+    <NavigationProperty Name="SUBSCRIPTIONs" Relationship="Self.fk_SUBSCRIPTION_SUBSCRIPTION_PACKAGE" FromRole="SUBSCRIPTION_PACKAGE" ToRole="SUBSCRIPTION" />
+    <NavigationProperty Name="SUBSCRIPTION_PACKAGE_PERIOD" Relationship="Self.fk_SUBSCRIPTION_PACKAGE_SUBSCRIPTION_PACKAGE_PERIOD" FromRole="SUBSCRIPTION_PACKAGE" ToRole="SUBSCRIPTION_PACKAGE_PERIOD" />
+  </EntityType>
+  <EntityType Name="SUBSCRIPTION_PACKAGE_PERIOD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EFF_FROM" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EFF_TO" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TRIAL" Type="Boolean" Nullable="false" />
+    <Property Name="PKG_CNT" Type="Int32" Nullable="false" />
+    <Property Name="DESCR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SUBSCRIPTION_PACKAGE" Relationship="Self.fk_SUBSCRIPTION_PACKAGE_SUBSCRIPTION_PACKAGE_PERIOD" FromRole="SUBSCRIPTION_PACKAGE_PERIOD" ToRole="SUBSCRIPTION_PACKAGE" />
+  </EntityType>
+  <EntityType Name="TEMPLATE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONTENT" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="EMAIL_TO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SUBJECT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="USER_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PWD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TIMESHEET">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WEEK_CAL_ID" Type="Int32" Nullable="false" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="RES_ID" Type="Int32" Nullable="false" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="HOURS_LOGGED" Relationship="Self.FK_HOURS_LOGGED_TIMESHEET" FromRole="TIMESHEET" ToRole="HOURS_LOGGED" />
+    <NavigationProperty Name="TIMESHEET_LOG" Relationship="Self.FK_TIMESHEET_LOG_TIMESHEET" FromRole="TIMESHEET" ToRole="TIMESHEET_LOG" />
+  </EntityType>
+  <EntityType Name="TIMESHEET_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIMESHEET_ID" Type="Int32" Nullable="false" />
+    <Property Name="WORKFLOW_ID" Type="Int32" />
+    <Property Name="STAT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOTES" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TIMESHEET" Relationship="Self.FK_TIMESHEET_LOG_TIMESHEET" FromRole="TIMESHEET_LOG" ToRole="TIMESHEET" />
+  </EntityType>
+  <EntityType Name="TIMESHEET_WORKFLOW">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORG_RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PREV_STATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ACTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NEXT_STATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NEXT_RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="USER_DETAILS">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="FIRST_NAME" />
+      <PropertyRef Name="LAST_NAME" />
+      <PropertyRef Name="EMAIL_ID" />
+      <PropertyRef Name="COMP_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ROLE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RES_ID" Type="Int32" Nullable="false" />
+    <Property Name="RES_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PWD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USER_ACTIVATED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="QNO_1" Type="Int32" Nullable="false" />
+    <Property Name="ANS_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="QNO_2" Type="Int32" Nullable="false" />
+    <Property Name="ANS_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="QNO_3" Type="Int32" Nullable="false" />
+    <Property Name="ANS_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="VENDOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ADDR_ID" Type="Int32" />
+    <Property Name="PHONE_NUM1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE_NUM2" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="FAX_NUM" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_ID" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="WEBSITE" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="DOMAIN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NOTES" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+    <Property Name="COMP_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WEEK_CALENDER">
+    <Key>
+      <PropertyRef Name="YEAR" />
+      <PropertyRef Name="WEEK_NUM" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="YEAR" Type="Int32" Nullable="false" />
+    <Property Name="WEEK_NUM" Type="Int32" Nullable="false" />
+    <Property Name="WEEK_START_DT" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="WEEK_END_DT" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IS_DELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CR_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_CR" Type="DateTime" Precision="3" />
+    <Property Name="MOD_BY" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DT_MOD" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_CANDIDATE_ADDRESS">
+    <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="1" />
+    <End Role="CANDIDATE" Type="Self.CANDIDATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADDRESS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CANDIDATE">
+        <PropertyRef Name="ADDR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMPANY_ADDRESS">
+    <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="1" />
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADDRESS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="COMPANY">
+        <PropertyRef Name="ADDR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACTOR_ADDRESS">
+    <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="1" />
+    <End Role="CONTRACTOR" Type="Self.CONTRACTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADDRESS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CONTRACTOR">
+        <PropertyRef Name="ADDR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_ADDRESS">
+    <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="1" />
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADDRESS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="ADDR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUBSCRIBER_ADDRESS">
+    <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="0..1" />
+    <End Role="SUBSCRIBER" Type="Self.SUBSCRIBER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADDRESS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBSCRIBER">
+        <PropertyRef Name="ADDR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ARTIFACT_ARTIFACT_TYPE_LKUP">
+    <End Role="ARTIFACT_TYPE_LKUP" Type="Self.ARTIFACT_TYPE_LKUP" Multiplicity="1" />
+    <End Role="ARTIFACT" Type="Self.ARTIFACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARTIFACT_TYPE_LKUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ARTIFACT">
+        <PropertyRef Name="ARTIFACT_TYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CANDIDATE_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="CANDIDATE" Type="Self.CANDIDATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CANDIDATE">
+        <PropertyRef Name="REC_COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CANDIDATE_ID">
+    <End Role="CANDIDATE" Type="Self.CANDIDATE" Multiplicity="0..1" />
+    <End Role="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" Type="Self.CANDIDATE_SOCIALMEDIA_SELECTED_URLS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CANDIDATE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CANDIDATE_SOCIALMEDIA_SELECTED_URLS">
+        <PropertyRef Name="CANDIDATE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CANDIDATE_NOTIFICATION">
+    <End Role="NOTIFICATION" Type="Self.NOTIFICATION" Multiplicity="1" />
+    <End Role="CANDIDATE" Type="Self.CANDIDATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTIFICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CANDIDATE">
+        <PropertyRef Name="NOTIFICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CANDIDATE_SKILL">
+    <End Role="SKILL" Type="Self.SKILL" Multiplicity="0..1" />
+    <End Role="CANDIDATE" Type="Self.CANDIDATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKILL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CANDIDATE">
+        <PropertyRef Name="SKILL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOCIALMEDIA_SELECTED_ID">
+    <End Role="SOCIALMEDIA_LKUP" Type="Self.SOCIALMEDIA_LKUP" Multiplicity="0..1" />
+    <End Role="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" Type="Self.CANDIDATE_SOCIALMEDIA_SELECTED_URLS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIALMEDIA_LKUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CANDIDATE_SOCIALMEDIA_SELECTED_URLS">
+        <PropertyRef Name="SOCIALMEDIA_SELECTED" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMPANY_CLIENTS_CLIENT">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+    <End Role="COMPANY_CLIENTS" Type="Self.COMPANY_CLIENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="COMPANY_CLIENTS">
+        <PropertyRef Name="CLIENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACTOR_CLIENT">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+    <End Role="CONTRACTOR" Type="Self.CONTRACTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CONTRACTOR">
+        <PropertyRef Name="CLIENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_CLIENT">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="0..1" />
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="CLIENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMP_ID">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="0..1" />
+    <End Role="SIGNATURE" Type="Self.SIGNATURE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SIGNATURE">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMPANY_CLIENTS_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="COMPANY_CLIENTS" Type="Self.COMPANY_CLIENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="COMPANY_CLIENTS">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMPANY_NOTIFICATION">
+    <End Role="NOTIFICATION" Type="Self.NOTIFICATION" Multiplicity="0..1" />
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTIFICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="COMPANY">
+        <PropertyRef Name="NOTIFICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACTOR_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="CONTRACTOR" Type="Self.CONTRACTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CONTRACTOR">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RESOURCE_PROFILE_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="RESOURCE_PROFILE" Type="Self.RESOURCE_PROFILE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RESOURCE_PROFILE">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUBSCRIBER_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="SUBSCRIBER" Type="Self.SUBSCRIBER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBSCRIBER">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SUBSCRIPTION_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="SUBSCRIPTION" Type="Self.SUBSCRIPTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBSCRIPTION">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACTOR_CONTRACTOR">
+    <End Role="CONTRACTOR" Type="Self.CONTRACTOR" Multiplicity="1" />
+    <End Role="CONTRACTOR1" Type="Self.CONTRACTOR" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CONTRACTOR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CONTRACTOR1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACTOR_NOTIFICATION">
+    <End Role="NOTIFICATION" Type="Self.NOTIFICATION" Multiplicity="1" />
+    <End Role="CONTRACTOR" Type="Self.CONTRACTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTIFICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CONTRACTOR">
+        <PropertyRef Name="NOTIFICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACTOR_SKILL">
+    <End Role="SKILL" Type="Self.SKILL" Multiplicity="0..1" />
+    <End Role="CONTRACTOR" Type="Self.CONTRACTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKILL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CONTRACTOR">
+        <PropertyRef Name="SKILL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SCHEDULER_FREQUENCY_LKUP3">
+    <End Role="DURATION_LKUP" Type="Self.DURATION_LKUP" Multiplicity="0..1" />
+    <End Role="SCHEDULER_FREQUENCY" Type="Self.SCHEDULER_FREQUENCY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DURATION_LKUP">
+        <PropertyRef Name="TYPE" />
+      </Principal>
+      <Dependent Role="SCHEDULER_FREQUENCY">
+        <PropertyRef Name="INTERVAL_DURATION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_NOTIFICATION">
+    <End Role="NOTIFICATION" Type="Self.NOTIFICATION" Multiplicity="1" />
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTIFICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="NOTIFICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_SKILL">
+    <End Role="SKILL" Type="Self.SKILL" Multiplicity="0..1" />
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKILL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="SKILL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_FEATURE_ACCESS_RL_FEATURE">
+    <End Role="RL_FEATURE" Type="Self.RL_FEATURE" Multiplicity="1" />
+    <End Role="FEATURE_ACCESS" Type="Self.FEATURE_ACCESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RL_FEATURE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FEATURE_ACCESS">
+        <PropertyRef Name="FEATURE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_FEATURE_ACCESS_SCREEN_ACTION">
+    <End Role="SCREEN_ACTION" Type="Self.SCREEN_ACTION" Multiplicity="1" />
+    <End Role="FEATURE_ACCESS" Type="Self.FEATURE_ACCESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SCREEN_ACTION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FEATURE_ACCESS">
+        <PropertyRef Name="SCREEN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SCHEDULER_FREQUENCY_LKUP2">
+    <End Role="FREQUENCY_LKUP" Type="Self.FREQUENCY_LKUP" Multiplicity="1" />
+    <End Role="SCHEDULER_FREQUENCY" Type="Self.SCHEDULER_FREQUENCY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FREQUENCY_LKUP">
+        <PropertyRef Name="TYPE" />
+      </Principal>
+      <Dependent Role="SCHEDULER_FREQUENCY">
+        <PropertyRef Name="FREQUENCY_TYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOURS_LOGGED_PROJECT">
+    <End Role="PROJECT" Type="Self.PROJECT" Multiplicity="1" />
+    <End Role="HOURS_LOGGED" Type="Self.HOURS_LOGGED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJECT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HOURS_LOGGED">
+        <PropertyRef Name="PROJ_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOURS_LOGGED_TIMESHEET">
+    <End Role="TIMESHEET" Type="Self.TIMESHEET" Multiplicity="1" />
+    <End Role="HOURS_LOGGED" Type="Self.HOURS_LOGGED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIMESHEET">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HOURS_LOGGED">
+        <PropertyRef Name="TIMESHEET_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_INVOICE_SUBSCRIPTION">
+    <End Role="SUBSCRIPTION" Type="Self.SUBSCRIPTION" Multiplicity="1" />
+    <End Role="INVOICE" Type="Self.INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUBSCRIPTION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="INVOICE">
+        <PropertyRef Name="SUBSCRIPTION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_INVOICE_SUBSCRIPTION_PACKAGE">
+    <End Role="SUBSCRIPTION_PACKAGE" Type="Self.SUBSCRIPTION_PACKAGE" Multiplicity="1" />
+    <End Role="INVOICE" Type="Self.INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUBSCRIPTION_PACKAGE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="INVOICE">
+        <PropertyRef Name="SUBSCR_PKG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JOB_POSTING_SKILL">
+    <End Role="SKILL" Type="Self.SKILL" Multiplicity="0..1" />
+    <End Role="JOB" Type="Self.JOB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKILL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JOB">
+        <PropertyRef Name="SKILL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REQUIREMENT_POSTING_JOB_POSTING">
+    <End Role="JOB" Type="Self.JOB" Multiplicity="1" />
+    <End Role="JOB_POSTING" Type="Self.JOB_POSTING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JOB">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JOB_POSTING">
+        <PropertyRef Name="JOB_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUBSCRIBER_NOTIFICATION">
+    <End Role="NOTIFICATION" Type="Self.NOTIFICATION" Multiplicity="1" />
+    <End Role="SUBSCRIBER" Type="Self.SUBSCRIBER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTIFICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBSCRIBER">
+        <PropertyRef Name="NOTIFICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUBMISSION_STATUS_SUBSCRIBER_RESOURCE_SUBMISSION">
+    <End Role="POSTING_SUBMISSION" Type="Self.POSTING_SUBMISSION" Multiplicity="1" />
+    <End Role="SUBMISSION_STATUS" Type="Self.SUBMISSION_STATUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="POSTING_SUBMISSION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBMISSION_STATUS">
+        <PropertyRef Name="POSTING_SUBMISSION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROJECT_RESOURCE_PROJECT">
+    <End Role="PROJECT" Type="Self.PROJECT" Multiplicity="1" />
+    <End Role="PROJECT_RESOURCE" Type="Self.PROJECT_RESOURCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJECT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PROJECT_RESOURCE">
+        <PropertyRef Name="PROJ_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RESOURCE_PROFILE_RESOURCE_PROFILE">
+    <End Role="RESOURCE_PROFILE" Type="Self.RESOURCE_PROFILE" Multiplicity="1" />
+    <End Role="RESOURCE_PROFILE1" Type="Self.RESOURCE_PROFILE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RESOURCE_PROFILE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RESOURCE_PROFILE1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RES_ID">
+    <End Role="RL_USERS" Type="Self.RL_USERS" Multiplicity="0..1" />
+    <End Role="SIGNATURE" Type="Self.SIGNATURE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RL_USERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SIGNATURE">
+        <PropertyRef Name="RES_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SCHEDULER_FREQUENCY_LKUP1">
+    <End Role="SCHEDULER_TYPE_LKUP" Type="Self.SCHEDULER_TYPE_LKUP" Multiplicity="1" />
+    <End Role="SCHEDULER_FREQUENCY" Type="Self.SCHEDULER_FREQUENCY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SCHEDULER_TYPE_LKUP">
+        <PropertyRef Name="TYPE" />
+      </Principal>
+      <Dependent Role="SCHEDULER_FREQUENCY">
+        <PropertyRef Name="SCHEDULER_TYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SUBSCRIPTION_SUBSCRIPTION_PACKAGE">
+    <End Role="SUBSCRIPTION_PACKAGE" Type="Self.SUBSCRIPTION_PACKAGE" Multiplicity="1" />
+    <End Role="SUBSCRIPTION" Type="Self.SUBSCRIPTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUBSCRIPTION_PACKAGE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBSCRIPTION">
+        <PropertyRef Name="SUBSCR_PKG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SUBSCRIPTION_PACKAGE_SUBSCRIPTION_PACKAGE_PERIOD">
+    <End Role="SUBSCRIPTION_PACKAGE_PERIOD" Type="Self.SUBSCRIPTION_PACKAGE_PERIOD" Multiplicity="1" />
+    <End Role="SUBSCRIPTION_PACKAGE" Type="Self.SUBSCRIPTION_PACKAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUBSCRIPTION_PACKAGE_PERIOD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBSCRIPTION_PACKAGE">
+        <PropertyRef Name="SPKG_PERIOD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TIMESHEET_LOG_TIMESHEET">
+    <End Role="TIMESHEET" Type="Self.TIMESHEET" Multiplicity="1" />
+    <End Role="TIMESHEET_LOG" Type="Self.TIMESHEET_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIMESHEET">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TIMESHEET_LOG">
+        <PropertyRef Name="TIMESHEET_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ResLandEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACTIVITies" EntityType="Self.ACTIVITY" />
+    <EntitySet Name="ACTIVITY_LKUP" EntityType="Self.ACTIVITY_LKUP" />
+    <EntitySet Name="ADDRESSes" EntityType="Self.ADDRESS" />
+    <EntitySet Name="ARTIFACTs" EntityType="Self.ARTIFACT" />
+    <EntitySet Name="ARTIFACT_TYPE_LKUP" EntityType="Self.ARTIFACT_TYPE_LKUP" />
+    <EntitySet Name="CANDIDATEs" EntityType="Self.CANDIDATE" />
+    <EntitySet Name="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" EntityType="Self.CANDIDATE_SOCIALMEDIA_SELECTED_URLS" />
+    <EntitySet Name="CATEGORY_LKUP" EntityType="Self.CATEGORY_LKUP" />
+    <EntitySet Name="CLIENTs" EntityType="Self.CLIENT" />
+    <EntitySet Name="COMPANies" EntityType="Self.COMPANY" />
+    <EntitySet Name="COMPANY_CLIENTS" EntityType="Self.COMPANY_CLIENTS" />
+    <EntitySet Name="COMPANY_HOLIDAY" EntityType="Self.COMPANY_HOLIDAY" />
+    <EntitySet Name="CONTACT_MODE_LKUP" EntityType="Self.CONTACT_MODE_LKUP" />
+    <EntitySet Name="CONTRACTORs" EntityType="Self.CONTRACTOR" />
+    <EntitySet Name="COUNTRY_LKUP" EntityType="Self.COUNTRY_LKUP" />
+    <EntitySet Name="DURATION_LKUP" EntityType="Self.DURATION_LKUP" />
+    <EntitySet Name="EMAIL_LOG" EntityType="Self.EMAIL_LOG" />
+    <EntitySet Name="EMPLOYEEs" EntityType="Self.EMPLOYEE" />
+    <EntitySet Name="ETHINIC_LKUP" EntityType="Self.ETHINIC_LKUP" />
+    <EntitySet Name="FEATURE_ACCESS" EntityType="Self.FEATURE_ACCESS" />
+    <EntitySet Name="FEATURE_SCREEN" EntityType="Self.FEATURE_SCREEN" />
+    <EntitySet Name="FREQUENCY_LKUP" EntityType="Self.FREQUENCY_LKUP" />
+    <EntitySet Name="HOURS_LOGGED" EntityType="Self.HOURS_LOGGED" />
+    <EntitySet Name="INVOICEs" EntityType="Self.INVOICE" />
+    <EntitySet Name="JOBs" EntityType="Self.JOB" />
+    <EntitySet Name="JOB_APPLICATION" EntityType="Self.JOB_APPLICATION" />
+    <EntitySet Name="JOB_CANDIDATE" EntityType="Self.JOB_CANDIDATE" />
+    <EntitySet Name="JOB_POSTING" EntityType="Self.JOB_POSTING" />
+    <EntitySet Name="JOB_TYPE_LKUP" EntityType="Self.JOB_TYPE_LKUP" />
+    <EntitySet Name="NOTIFICATIONs" EntityType="Self.NOTIFICATION" />
+    <EntitySet Name="PACKAGE_FEATURE" EntityType="Self.PACKAGE_FEATURE" />
+    <EntitySet Name="PAYMENT_PERIOD_LKUP" EntityType="Self.PAYMENT_PERIOD_LKUP" />
+    <EntitySet Name="PAYMENT_TYPE_LKUP" EntityType="Self.PAYMENT_TYPE_LKUP" />
+    <EntitySet Name="PERIOD_LKUP" EntityType="Self.PERIOD_LKUP" />
+    <EntitySet Name="POSTING_SUBMISSION" EntityType="Self.POSTING_SUBMISSION" />
+    <EntitySet Name="PROCESSING_STATE_LKUP" EntityType="Self.PROCESSING_STATE_LKUP" />
+    <EntitySet Name="PROJECTs" EntityType="Self.PROJECT" />
+    <EntitySet Name="PROJECT_RESOURCE" EntityType="Self.PROJECT_RESOURCE" />
+    <EntitySet Name="QUESTION_LKUP" EntityType="Self.QUESTION_LKUP" />
+    <EntitySet Name="RESIDENCY_LKUP" EntityType="Self.RESIDENCY_LKUP" />
+    <EntitySet Name="RESOURCE_PRIVILEGE_LKUP" EntityType="Self.RESOURCE_PRIVILEGE_LKUP" />
+    <EntitySet Name="RESOURCE_PROFILE" EntityType="Self.RESOURCE_PROFILE" />
+    <EntitySet Name="RESOURCE_TYPE_LKUP" EntityType="Self.RESOURCE_TYPE_LKUP" />
+    <EntitySet Name="RL_FEATURE" EntityType="Self.RL_FEATURE" />
+    <EntitySet Name="RL_LOG" EntityType="Self.RL_LOG" />
+    <EntitySet Name="RL_USER_LOG_DETAILS" EntityType="Self.RL_USER_LOG_DETAILS" />
+    <EntitySet Name="RL_USER_LOGIN_ATTEMPT" EntityType="Self.RL_USER_LOGIN_ATTEMPT" />
+    <EntitySet Name="RL_USER_TRACK_LOGGING" EntityType="Self.RL_USER_TRACK_LOGGING" />
+    <EntitySet Name="RL_USERS" EntityType="Self.RL_USERS" />
+    <EntitySet Name="ROLE_LKUP" EntityType="Self.ROLE_LKUP" />
+    <EntitySet Name="SCHEDULER_EXECUTION_LOG" EntityType="Self.SCHEDULER_EXECUTION_LOG" />
+    <EntitySet Name="SCHEDULER_FREQUENCY" EntityType="Self.SCHEDULER_FREQUENCY" />
+    <EntitySet Name="SCHEDULER_TYPE_LKUP" EntityType="Self.SCHEDULER_TYPE_LKUP" />
+    <EntitySet Name="SCREEN_ACTION" EntityType="Self.SCREEN_ACTION" />
+    <EntitySet Name="SETTINGS" EntityType="Self.SETTING" />
+    <EntitySet Name="SIGNATUREs" EntityType="Self.SIGNATURE" />
+    <EntitySet Name="SKILLs" EntityType="Self.SKILL" />
+    <EntitySet Name="SKILL_LKUP" EntityType="Self.SKILL_LKUP" />
+    <EntitySet Name="SMTP_CLIENT" EntityType="Self.SMTP_CLIENT" />
+    <EntitySet Name="SOCIALMEDIA_LKUP" EntityType="Self.SOCIALMEDIA_LKUP" />
+    <EntitySet Name="SOURCE_LKUP" EntityType="Self.SOURCE_LKUP" />
+    <EntitySet Name="STATUS_LKUP" EntityType="Self.STATUS_LKUP" />
+    <EntitySet Name="SUBMISSION_STATUS" EntityType="Self.SUBMISSION_STATUS" />
+    <EntitySet Name="SUBSCRIBERs" EntityType="Self.SUBSCRIBER" />
+    <EntitySet Name="SUBSCRIPTIONs" EntityType="Self.SUBSCRIPTION" />
+    <EntitySet Name="SUBSCRIPTION_PACKAGE" EntityType="Self.SUBSCRIPTION_PACKAGE" />
+    <EntitySet Name="SUBSCRIPTION_PACKAGE_PERIOD" EntityType="Self.SUBSCRIPTION_PACKAGE_PERIOD" />
+    <EntitySet Name="TEMPLATEs" EntityType="Self.TEMPLATE" />
+    <EntitySet Name="TIMESHEETs" EntityType="Self.TIMESHEET" />
+    <EntitySet Name="TIMESHEET_LOG" EntityType="Self.TIMESHEET_LOG" />
+    <EntitySet Name="TIMESHEET_WORKFLOW" EntityType="Self.TIMESHEET_WORKFLOW" />
+    <EntitySet Name="USER_DETAILS" EntityType="Self.USER_DETAILS" />
+    <EntitySet Name="USERS" EntityType="Self.USER" />
+    <EntitySet Name="VENDORs" EntityType="Self.VENDOR" />
+    <EntitySet Name="WEEK_CALENDER" EntityType="Self.WEEK_CALENDER" />
+    <AssociationSet Name="FK_CANDIDATE_ADDRESS" Association="Self.FK_CANDIDATE_ADDRESS">
+      <End Role="ADDRESS" EntitySet="ADDRESSes" />
+      <End Role="CANDIDATE" EntitySet="CANDIDATEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMPANY_ADDRESS" Association="Self.FK_COMPANY_ADDRESS">
+      <End Role="ADDRESS" EntitySet="ADDRESSes" />
+      <End Role="COMPANY" EntitySet="COMPANies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACTOR_ADDRESS" Association="Self.FK_CONTRACTOR_ADDRESS">
+      <End Role="ADDRESS" EntitySet="ADDRESSes" />
+      <End Role="CONTRACTOR" EntitySet="CONTRACTORs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_ADDRESS" Association="Self.FK_EMPLOYEE_ADDRESS">
+      <End Role="ADDRESS" EntitySet="ADDRESSes" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUBSCRIBER_ADDRESS" Association="Self.FK_SUBSCRIBER_ADDRESS">
+      <End Role="ADDRESS" EntitySet="ADDRESSes" />
+      <End Role="SUBSCRIBER" EntitySet="SUBSCRIBERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ARTIFACT_ARTIFACT_TYPE_LKUP" Association="Self.FK_ARTIFACT_ARTIFACT_TYPE_LKUP">
+      <End Role="ARTIFACT_TYPE_LKUP" EntitySet="ARTIFACT_TYPE_LKUP" />
+      <End Role="ARTIFACT" EntitySet="ARTIFACTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CANDIDATE_COMPANY" Association="Self.FK_CANDIDATE_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANies" />
+      <End Role="CANDIDATE" EntitySet="CANDIDATEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CANDIDATE_ID" Association="Self.FK_CANDIDATE_ID">
+      <End Role="CANDIDATE" EntitySet="CANDIDATEs" />
+      <End Role="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" EntitySet="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CANDIDATE_NOTIFICATION" Association="Self.FK_CANDIDATE_NOTIFICATION">
+      <End Role="NOTIFICATION" EntitySet="NOTIFICATIONs" />
+      <End Role="CANDIDATE" EntitySet="CANDIDATEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CANDIDATE_SKILL" Association="Self.FK_CANDIDATE_SKILL">
+      <End Role="SKILL" EntitySet="SKILLs" />
+      <End Role="CANDIDATE" EntitySet="CANDIDATEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOCIALMEDIA_SELECTED_ID" Association="Self.FK_SOCIALMEDIA_SELECTED_ID">
+      <End Role="SOCIALMEDIA_LKUP" EntitySet="SOCIALMEDIA_LKUP" />
+      <End Role="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" EntitySet="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMPANY_CLIENTS_CLIENT" Association="Self.FK_COMPANY_CLIENTS_CLIENT">
+      <End Role="CLIENT" EntitySet="CLIENTs" />
+      <End Role="COMPANY_CLIENTS" EntitySet="COMPANY_CLIENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACTOR_CLIENT" Association="Self.FK_CONTRACTOR_CLIENT">
+      <End Role="CLIENT" EntitySet="CLIENTs" />
+      <End Role="CONTRACTOR" EntitySet="CONTRACTORs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_CLIENT" Association="Self.FK_EMPLOYEE_CLIENT">
+      <End Role="CLIENT" EntitySet="CLIENTs" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMP_ID" Association="Self.FK_COMP_ID">
+      <End Role="COMPANY" EntitySet="COMPANies" />
+      <End Role="SIGNATURE" EntitySet="SIGNATUREs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMPANY_CLIENTS_COMPANY" Association="Self.FK_COMPANY_CLIENTS_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANies" />
+      <End Role="COMPANY_CLIENTS" EntitySet="COMPANY_CLIENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMPANY_NOTIFICATION" Association="Self.FK_COMPANY_NOTIFICATION">
+      <End Role="NOTIFICATION" EntitySet="NOTIFICATIONs" />
+      <End Role="COMPANY" EntitySet="COMPANies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACTOR_COMPANY" Association="Self.FK_CONTRACTOR_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANies" />
+      <End Role="CONTRACTOR" EntitySet="CONTRACTORs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_COMPANY" Association="Self.FK_EMPLOYEE_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANies" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RESOURCE_PROFILE_COMPANY" Association="Self.FK_RESOURCE_PROFILE_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANies" />
+      <End Role="RESOURCE_PROFILE" EntitySet="RESOURCE_PROFILE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUBSCRIBER_COMPANY" Association="Self.FK_SUBSCRIBER_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANies" />
+      <End Role="SUBSCRIBER" EntitySet="SUBSCRIBERs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SUBSCRIPTION_COMPANY" Association="Self.fk_SUBSCRIPTION_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANies" />
+      <End Role="SUBSCRIPTION" EntitySet="SUBSCRIPTIONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACTOR_CONTRACTOR" Association="Self.FK_CONTRACTOR_CONTRACTOR">
+      <End Role="CONTRACTOR" EntitySet="CONTRACTORs" />
+      <End Role="CONTRACTOR1" EntitySet="CONTRACTORs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACTOR_NOTIFICATION" Association="Self.FK_CONTRACTOR_NOTIFICATION">
+      <End Role="NOTIFICATION" EntitySet="NOTIFICATIONs" />
+      <End Role="CONTRACTOR" EntitySet="CONTRACTORs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACTOR_SKILL" Association="Self.FK_CONTRACTOR_SKILL">
+      <End Role="SKILL" EntitySet="SKILLs" />
+      <End Role="CONTRACTOR" EntitySet="CONTRACTORs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SCHEDULER_FREQUENCY_LKUP3" Association="Self.fk_SCHEDULER_FREQUENCY_LKUP3">
+      <End Role="DURATION_LKUP" EntitySet="DURATION_LKUP" />
+      <End Role="SCHEDULER_FREQUENCY" EntitySet="SCHEDULER_FREQUENCY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_NOTIFICATION" Association="Self.FK_EMPLOYEE_NOTIFICATION">
+      <End Role="NOTIFICATION" EntitySet="NOTIFICATIONs" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_SKILL" Association="Self.FK_EMPLOYEE_SKILL">
+      <End Role="SKILL" EntitySet="SKILLs" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_FEATURE_ACCESS_RL_FEATURE" Association="Self.fk_FEATURE_ACCESS_RL_FEATURE">
+      <End Role="RL_FEATURE" EntitySet="RL_FEATURE" />
+      <End Role="FEATURE_ACCESS" EntitySet="FEATURE_ACCESS" />
+    </AssociationSet>
+    <AssociationSet Name="fk_FEATURE_ACCESS_SCREEN_ACTION" Association="Self.fk_FEATURE_ACCESS_SCREEN_ACTION">
+      <End Role="SCREEN_ACTION" EntitySet="SCREEN_ACTION" />
+      <End Role="FEATURE_ACCESS" EntitySet="FEATURE_ACCESS" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SCHEDULER_FREQUENCY_LKUP2" Association="Self.fk_SCHEDULER_FREQUENCY_LKUP2">
+      <End Role="FREQUENCY_LKUP" EntitySet="FREQUENCY_LKUP" />
+      <End Role="SCHEDULER_FREQUENCY" EntitySet="SCHEDULER_FREQUENCY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOURS_LOGGED_PROJECT" Association="Self.FK_HOURS_LOGGED_PROJECT">
+      <End Role="PROJECT" EntitySet="PROJECTs" />
+      <End Role="HOURS_LOGGED" EntitySet="HOURS_LOGGED" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOURS_LOGGED_TIMESHEET" Association="Self.FK_HOURS_LOGGED_TIMESHEET">
+      <End Role="TIMESHEET" EntitySet="TIMESHEETs" />
+      <End Role="HOURS_LOGGED" EntitySet="HOURS_LOGGED" />
+    </AssociationSet>
+    <AssociationSet Name="fk_INVOICE_SUBSCRIPTION" Association="Self.fk_INVOICE_SUBSCRIPTION">
+      <End Role="SUBSCRIPTION" EntitySet="SUBSCRIPTIONs" />
+      <End Role="INVOICE" EntitySet="INVOICEs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_INVOICE_SUBSCRIPTION_PACKAGE" Association="Self.fk_INVOICE_SUBSCRIPTION_PACKAGE">
+      <End Role="SUBSCRIPTION_PACKAGE" EntitySet="SUBSCRIPTION_PACKAGE" />
+      <End Role="INVOICE" EntitySet="INVOICEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JOB_POSTING_SKILL" Association="Self.FK_JOB_POSTING_SKILL">
+      <End Role="SKILL" EntitySet="SKILLs" />
+      <End Role="JOB" EntitySet="JOBs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REQUIREMENT_POSTING_JOB_POSTING" Association="Self.FK_REQUIREMENT_POSTING_JOB_POSTING">
+      <End Role="JOB" EntitySet="JOBs" />
+      <End Role="JOB_POSTING" EntitySet="JOB_POSTING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUBSCRIBER_NOTIFICATION" Association="Self.FK_SUBSCRIBER_NOTIFICATION">
+      <End Role="NOTIFICATION" EntitySet="NOTIFICATIONs" />
+      <End Role="SUBSCRIBER" EntitySet="SUBSCRIBERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUBMISSION_STATUS_SUBSCRIBER_RESOURCE_SUBMISSION" Association="Self.FK_SUBMISSION_STATUS_SUBSCRIBER_RESOURCE_SUBMISSION">
+      <End Role="POSTING_SUBMISSION" EntitySet="POSTING_SUBMISSION" />
+      <End Role="SUBMISSION_STATUS" EntitySet="SUBMISSION_STATUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROJECT_RESOURCE_PROJECT" Association="Self.FK_PROJECT_RESOURCE_PROJECT">
+      <End Role="PROJECT" EntitySet="PROJECTs" />
+      <End Role="PROJECT_RESOURCE" EntitySet="PROJECT_RESOURCE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RESOURCE_PROFILE_RESOURCE_PROFILE" Association="Self.FK_RESOURCE_PROFILE_RESOURCE_PROFILE">
+      <End Role="RESOURCE_PROFILE" EntitySet="RESOURCE_PROFILE" />
+      <End Role="RESOURCE_PROFILE1" EntitySet="RESOURCE_PROFILE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RES_ID" Association="Self.FK_RES_ID">
+      <End Role="RL_USERS" EntitySet="RL_USERS" />
+      <End Role="SIGNATURE" EntitySet="SIGNATUREs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SCHEDULER_FREQUENCY_LKUP1" Association="Self.fk_SCHEDULER_FREQUENCY_LKUP1">
+      <End Role="SCHEDULER_TYPE_LKUP" EntitySet="SCHEDULER_TYPE_LKUP" />
+      <End Role="SCHEDULER_FREQUENCY" EntitySet="SCHEDULER_FREQUENCY" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SUBSCRIPTION_SUBSCRIPTION_PACKAGE" Association="Self.fk_SUBSCRIPTION_SUBSCRIPTION_PACKAGE">
+      <End Role="SUBSCRIPTION_PACKAGE" EntitySet="SUBSCRIPTION_PACKAGE" />
+      <End Role="SUBSCRIPTION" EntitySet="SUBSCRIPTIONs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SUBSCRIPTION_PACKAGE_SUBSCRIPTION_PACKAGE_PERIOD" Association="Self.fk_SUBSCRIPTION_PACKAGE_SUBSCRIPTION_PACKAGE_PERIOD">
+      <End Role="SUBSCRIPTION_PACKAGE_PERIOD" EntitySet="SUBSCRIPTION_PACKAGE_PERIOD" />
+      <End Role="SUBSCRIPTION_PACKAGE" EntitySet="SUBSCRIPTION_PACKAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TIMESHEET_LOG_TIMESHEET" Association="Self.FK_TIMESHEET_LOG_TIMESHEET">
+      <End Role="TIMESHEET" EntitySet="TIMESHEETs" />
+      <End Role="TIMESHEET_LOG" EntitySet="TIMESHEET_LOG" />
+    </AssociationSet>
+    <FunctionImport Name="SP_ACCTUNLOCKUSER">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Creatingweeknumbersbasedonyear">
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

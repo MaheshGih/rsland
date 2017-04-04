@@ -1,0 +1,2138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ReslandModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACTIVITY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JOB_CANDIDATE_ID" Type="int" Nullable="false" />
+    <Property Name="CONTACT_MODE_TYPE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ACTIVITY_TYPE" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="NOTE" Type="varchar" MaxLength="255" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ACTIVITY_LKUP">
+    <Key>
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="TYPE" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="LEVEL" Type="int" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ADDRESS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ADDR1" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="ADDR2" Type="varchar" MaxLength="80" />
+    <Property Name="ADDR3" Type="varchar" MaxLength="80" />
+    <Property Name="CITY" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="STATE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="POSTAL_CD" Type="varchar" MaxLength="10" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="50" />
+    <Property Name="PHONE1" Type="varchar" MaxLength="10" />
+    <Property Name="PHONE2" Type="varchar" MaxLength="10" />
+    <Property Name="FAX" Type="varchar" MaxLength="10" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ARTIFACT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ARTIFACT_TYPE" Type="int" Nullable="false" />
+    <Property Name="RES_ID" Type="int" Nullable="false" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="PATH" Type="varchar" MaxLength="512" />
+    <Property Name="NAME" Type="varchar" MaxLength="100" />
+    <Property Name="CONTENT" Type="varbinary(max)" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ARTIFACT_TYPE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="255" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="RES_ID" Type="int" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CANDIDATE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SALUTATION" Type="varchar" MaxLength="5" />
+    <Property Name="FIRST_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MIDDLE_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SOCIAL_EMAIL_ID" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SEX" Type="char" MaxLength="1" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="ADDR_ID" Type="int" Nullable="false" />
+    <Property Name="REC_COMP_ID" Type="int" Nullable="false" />
+    <Property Name="RES_ID" Type="int" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="25" />
+    <Property Name="REF_BY" Type="varchar" MaxLength="100" />
+    <Property Name="SKILL_ID" Type="int" />
+    <Property Name="NOTIFICATION_ID" Type="int" Nullable="false" />
+    <Property Name="SOURCE" Type="varchar" MaxLength="100" />
+    <Property Name="SOURCE_REF_ID" Type="varchar" MaxLength="50" />
+    <Property Name="EMPLR_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="OWNER" Type="varchar" MaxLength="50" />
+    <Property Name="EMPLR_PHONE" Type="varchar" MaxLength="10" />
+    <Property Name="HOT" Type="bit" Nullable="false" />
+    <Property Name="EMP_TYPE_NEEDED" Type="varchar" MaxLength="10" />
+    <Property Name="CURR_PAY" Type="varchar" MaxLength="25" />
+    <Property Name="DESIRED_PAY" Type="varchar" MaxLength="25" />
+    <Property Name="DATE_AVAILABLE" Type="datetime" />
+    <Property Name="RELOCATE" Type="bit" Nullable="false" />
+    <Property Name="RELOC_PREFERENCES" Type="varchar" MaxLength="255" />
+    <Property Name="ETHINIC_TYPE" Type="int" />
+    <Property Name="RESIDENCY" Type="int" />
+    <Property Name="VETERAN" Type="char" MaxLength="1" />
+    <Property Name="WEBSITE" Type="varchar" MaxLength="50" />
+    <Property Name="DISABILITY" Type="char" MaxLength="1" />
+    <Property Name="STAT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CANDIDATE_SOCIALMEDIA_SELECTED_URLS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CANDIDATE_ID" Type="int" />
+    <Property Name="SOCIALMEDIA_SELECTED" Type="int" />
+    <Property Name="SOCIALNETWORKING_URL" Type="varchar" MaxLength="50" />
+    <Property Name="IS_DELETED" Type="varchar" MaxLength="1" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="50" />
+    <Property Name="DT_MOD" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CATEGORY_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CATEGORY" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CLIENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ADDR_ID" Type="int" Nullable="false" />
+    <Property Name="PHONE_NUM1" Type="varchar" MaxLength="10" />
+    <Property Name="PHONE_NUM2" Type="varchar" MaxLength="10" />
+    <Property Name="FAX_NUM" Type="varchar" MaxLength="10" />
+    <Property Name="EMAIL_ID" Type="varchar" MaxLength="255" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="EIN" Type="varchar" MaxLength="10" />
+    <Property Name="DOMAIN" Type="varchar" MaxLength="25" />
+    <Property Name="STAT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="WEBSITE" Type="varchar" MaxLength="512" />
+    <Property Name="KEY_TECHNOLOGIES" Type="varchar" MaxLength="2048" />
+    <Property Name="NOTES" Type="varchar" MaxLength="5000" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="COMPANY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DBA" Type="varchar" MaxLength="255" />
+    <Property Name="CATEGORY" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="WEBSITE" Type="varchar" MaxLength="255" />
+    <Property Name="ADDR_ID" Type="int" Nullable="false" />
+    <Property Name="NOTIFICATION_ID" Type="int" />
+    <Property Name="TAX_ID" Type="varchar" MaxLength="15" />
+    <Property Name="TECH_USED" Type="varchar" MaxLength="255" />
+    <Property Name="NOTES" Type="varchar" MaxLength="255" />
+    <Property Name="STAT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="COMPANY_CLIENTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CLIENT_ID" Type="int" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="IS_ACTIVATED" Type="bit" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="50" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="50" />
+    <Property Name="DT_MOD" Type="datetime" />
+    <Property Name="STAT" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="COMPANY_HOLIDAY">
+    <Key>
+      <PropertyRef Name="COMP_ID" />
+      <PropertyRef Name="HOLIDAY_DT" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="HOLIDAY_DT" Type="datetime" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CONTACT_MODE_LKUP">
+    <Key>
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="TYPE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CONTRACTOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MIDDLE_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="SEX" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="ADDR_ID" Type="int" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="EMPLR_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="EMPLR_PHONE" Type="varchar" MaxLength="10" />
+    <Property Name="CONTACT_CONTRACTOR" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CLIENT_ID" Type="int" Nullable="false" />
+    <Property Name="SKILL_ID" Type="int" />
+    <Property Name="NOTIFICATION_ID" Type="int" Nullable="false" />
+    <Property Name="PROSPECTIVE_EMP" Type="bit" />
+    <Property Name="EMP_TYPE_NEEDED" Type="varchar" MaxLength="10" />
+    <Property Name="PYMT_PERIOD" Type="varchar" MaxLength="10" />
+    <Property Name="CURR_PAY" Type="varchar" MaxLength="25" />
+    <Property Name="DESIRED_PAY" Type="varchar" MaxLength="25" />
+    <Property Name="DATE_AVAILABLE" Type="datetime" />
+    <Property Name="REF_BY" Type="varchar" MaxLength="100" />
+    <Property Name="RELOCATE" Type="bit" Nullable="false" />
+    <Property Name="RELOC_PREFERENCES" Type="varchar" MaxLength="255" />
+    <Property Name="ETHINIC_TYPE" Type="int" />
+    <Property Name="RESIDENCY" Type="int" />
+    <Property Name="VETERAN" Type="char" MaxLength="1" />
+    <Property Name="DISABILITY" Type="char" MaxLength="1" />
+    <Property Name="STAT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="COUNTRY_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CODE" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SUN_HOL" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MON_HOL" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TUE_HOL" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="WED_HOL" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="THU_HOL" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="FRI_HOL" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SAT_HOL" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DURATION_LKUP">
+    <Key>
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EMAIL_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SESSION_ID" Type="varchar" MaxLength="50" />
+    <Property Name="TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL_TO" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL_FROM" Type="varchar" MaxLength="50" />
+    <Property Name="STATUS" Type="varchar" MaxLength="50" />
+    <Property Name="TEMPLATETYPE" Type="varchar" MaxLength="50" />
+    <Property Name="REPLACED_TEXT" Type="varchar(max)" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="50" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varbinary" MaxLength="50" />
+    <Property Name="DT_MOD" Type="datetime" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MIDDLE_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="COMP_EMP_ID" Type="varchar" MaxLength="10" />
+    <Property Name="SEX" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="DOB" Type="datetime" Nullable="false" />
+    <Property Name="ADDR_ID" Type="int" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="PLACED_AT_CLIENT" Type="bit" />
+    <Property Name="CLIENT_ID" Type="int" />
+    <Property Name="NOTIFICATION_ID" Type="int" Nullable="false" />
+    <Property Name="RELOCATE" Type="bit" Nullable="false" />
+    <Property Name="RELOC_PREFERENCES" Type="varchar" MaxLength="255" />
+    <Property Name="CONTACT_EMPLOYER" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SKILL_ID" Type="int" />
+    <Property Name="ETHINIC_TYPE" Type="int" />
+    <Property Name="RESIDENCY" Type="int" />
+    <Property Name="VETERAN" Type="char" MaxLength="1" />
+    <Property Name="DISABILITY" Type="char" MaxLength="1" />
+    <Property Name="STAT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ETHINIC_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="DESCR" />
+      <PropertyRef Name="IS_DELETED" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IS_DELETED" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="50" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="50" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FEATURE_ACCESS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FEATURE_ID" Type="int" Nullable="false" />
+    <Property Name="SCREEN_ID" Type="int" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FEATURE_SCREEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FEATURE_ID" Type="int" Nullable="false" />
+    <Property Name="SCREEN_NAME" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DT_CR" Type="datetime" Nullable="false" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FREQUENCY_LKUP">
+    <Key>
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HOURS_LOGGED">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TIMESHEET_ID" Type="int" Nullable="false" />
+    <Property Name="PROJ_ID" Type="int" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="200" />
+    <Property Name="SUN_HRS" Type="int" Nullable="false" />
+    <Property Name="MON_HRS" Type="int" Nullable="false" />
+    <Property Name="TUE_HRS" Type="int" Nullable="false" />
+    <Property Name="WED_HRS" Type="int" Nullable="false" />
+    <Property Name="THU_HRS" Type="int" Nullable="false" />
+    <Property Name="FRI_HRS" Type="int" Nullable="false" />
+    <Property Name="SAT_HRS" Type="int" Nullable="false" />
+    <Property Name="WORKED_ON_HOLIDAY" Type="bit" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="INVOICE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SUBSCRIPTION_ID" Type="int" Nullable="false" />
+    <Property Name="SUBSCR_PKG_ID" Type="int" Nullable="false" />
+    <Property Name="START_DT" Type="datetime" Nullable="false" />
+    <Property Name="END_DT" Type="datetime" Nullable="false" />
+    <Property Name="AMT_DUE" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="AMT_PAID" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="AMT_ADJ" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="DISCOUNT_ADJ" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="255" />
+    <Property Name="STAT" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="JOB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" />
+    <Property Name="POSTED_BY" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="POSTED_BY_ID" Type="int" Nullable="false" />
+    <Property Name="CONTACT_NAME" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="CONTACT_PHONE" Type="varchar" MaxLength="25" />
+    <Property Name="CONTACT_EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="TITLE" Type="varchar" MaxLength="100" />
+    <Property Name="DESCR" Type="varchar" MaxLength="5120" />
+    <Property Name="PREREQUISITES" Type="varchar" MaxLength="512" />
+    <Property Name="JOB_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="LOCATION" Type="varchar" MaxLength="50" />
+    <Property Name="DURATION" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="POST_DT" Type="datetime" />
+    <Property Name="POST_END_DT" Type="datetime" />
+    <Property Name="POSITIONS_CNT" Type="int" Nullable="false" />
+    <Property Name="CATEGORY" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="MAX_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="MIN_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="STAT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+    <Property Name="SKILL_ID" Type="int" />
+    <Property Name="PERKS" Type="varchar" MaxLength="50" />
+    <Property Name="JOB_ID" Type="varchar" MaxLength="15" />
+    <Property Name="SOURCE" Type="varchar" MaxLength="50" />
+    <Property Name="SALARY" Type="varchar" MaxLength="50" />
+    <Property Name="HOT" Type="bit" />
+    <Property Name="PUBLISH" Type="bit" />
+    <Property Name="CLIENT_ID" Type="int" />
+    <Property Name="DEPARTMENT" Type="varchar" MaxLength="50" />
+    <Property Name="RECRUITER" Type="varchar" MaxLength="50" />
+    <Property Name="VENDOR_TYPE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="JOB_APPLICATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JOB_POSTING_ID" Type="int" Nullable="false" />
+    <Property Name="RES_ID" Type="int" Nullable="false" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="APPLIED_DT" Type="datetime" />
+    <Property Name="REQ_RATE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RESUME" Type="varbinary(max)" />
+    <Property Name="NOTES" Type="varchar" MaxLength="1024" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="JOB_CANDIDATE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JOB_ID" Type="int" Nullable="false" />
+    <Property Name="CANDIDATE_ID" Type="int" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="JOB_POSTING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JOB_ID" Type="int" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="SUB_ID" Type="int" />
+    <Property Name="STATUS" Type="varchar" MaxLength="15" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="JOB_TYPE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="STAT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NOTIFICATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOTIFY_BY_EMAIL" Type="bit" />
+    <Property Name="PRI_EMAIL_ID" Type="varchar" MaxLength="255" />
+    <Property Name="SEC_EMAIL_ID" Type="varchar" MaxLength="255" />
+    <Property Name="NOTIFY_BY_PHONE" Type="bit" />
+    <Property Name="PHONE_NUM" Type="varchar" MaxLength="20" />
+    <Property Name="BEST_TIME" Type="varchar" MaxLength="50" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PACKAGE_FEATURE">
+    <Key>
+      <PropertyRef Name="SUBSCR_PKG_ID" />
+      <PropertyRef Name="FEATURE_ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SUBSCR_PKG_ID" Type="int" Nullable="false" />
+    <Property Name="FEATURE_ID" Type="int" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PAYMENT_PERIOD_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PAYMENT_TYPE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PERIOD_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="COMMENT" Type="varchar" MaxLength="256" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="POSTING_SUBMISSION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="POSTING_ID" Type="int" Nullable="false" />
+    <Property Name="POSTING_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RES_ID" Type="int" Nullable="false" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="50" />
+    <Property Name="DT_MOD" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="50" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="START_DT" Type="datetime" />
+    <Property Name="END_DT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PROCESSING_STATE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STATE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PROJECT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="MANAGER" Type="varchar" MaxLength="50" />
+    <Property Name="MGR_PHONE" Type="varchar" MaxLength="10" />
+    <Property Name="START_DT" Type="datetime" />
+    <Property Name="END_DT" Type="datetime" />
+    <Property Name="BUDGET" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="TECH_USED" Type="varchar" MaxLength="255" />
+    <Property Name="CLIENT_PROJECT" Type="bit" Nullable="false" />
+    <Property Name="SPONSOR_ID" Type="int" Nullable="false" />
+    <Property Name="NOTES" Type="varchar" MaxLength="255" />
+    <Property Name="STAT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+    <Property Name="COMP_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="PROJECT_RESOURCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PROJ_ID" Type="int" Nullable="false" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="RES_COUNT" Type="int" />
+    <Property Name="SKILLS_NEEDED" Type="varchar" MaxLength="255" />
+    <Property Name="EXP_RATE" Type="varchar" MaxLength="25" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="QUESTION_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QUESTION" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RESIDENCY_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RESOURCE_PRIVILEGE_LKUP">
+    <Key>
+      <PropertyRef Name="RES_TYPE" />
+      <PropertyRef Name="PRIVILEGE" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="PRIVILEGE" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RESOURCE_PROFILE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="RES_ID" Type="int" Nullable="false" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="EMPLOYMENT_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="DESIGNATION" Type="varchar" MaxLength="50" />
+    <Property Name="EXPERIENCE" Type="varchar" MaxLength="255" />
+    <Property Name="WORK_COMPANY_NAME" Type="varchar" MaxLength="255" />
+    <Property Name="WORK_LOCATION" Type="varchar" MaxLength="255" />
+    <Property Name="START_DT" Type="datetime" Nullable="false" />
+    <Property Name="END_DT" Type="datetime" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RESOURCE_TYPE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="ADMIN_ACCESS" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="LOGIN_ACCESS" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TIMESHEET_ACCESS" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RL_FEATURE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FEATURE" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="AVAILABLE" Type="bit" Nullable="false" />
+    <Property Name="COMMENT" Type="varchar" MaxLength="512" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+    <Property Name="COST" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RL_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="SESSION_ID" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ACTION" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="PREV_STATE" Type="varchar" MaxLength="255" />
+    <Property Name="NOTES" Type="varchar" MaxLength="255" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RL_USER_LOG_DETAILS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RL_USER_ID" Type="int" Nullable="false" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="LOGIN_TIME" Type="datetime" Nullable="false" />
+    <Property Name="LOGOUT_TIME" Type="datetime" Nullable="false" />
+    <Property Name="IP_ADDR" Type="varchar" MaxLength="200" />
+    <Property Name="BROWSER" Type="varchar" MaxLength="200" />
+    <Property Name="LOCATION" Type="varchar" MaxLength="200" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RL_USER_LOGIN_ATTEMPT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="LOGIN_ATTEMPT_CNT" Type="int" Nullable="false" />
+    <Property Name="MAX_ATTEMPT_CNT" Type="int" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RL_USER_TRACK_LOGGING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="LOGIN_TIME" Type="datetime" Nullable="false" />
+    <Property Name="LOGOUT_TIME" Type="datetime" />
+    <Property Name="HOW_LOGOUT" Type="varchar" MaxLength="25" />
+    <Property Name="IP_ADDR" Type="varchar" MaxLength="200" />
+    <Property Name="BROWSER" Type="varchar" MaxLength="200" />
+    <Property Name="LOCATION" Type="varchar" MaxLength="200" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+    <Property Name="SESSION_ID" Type="varchar" MaxLength="225" />
+  </EntityType>
+  <EntityType Name="RL_USERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="PWD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="50" />
+    <Property Name="DESCR" Type="varchar" MaxLength="200" />
+    <Property Name="NOTIFICATION_ID" Type="int" />
+    <Property Name="COMP_ID" Type="int" />
+    <Property Name="USER_ACTIVATED" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ACCT_LOCKED" Type="bit" Nullable="false" />
+    <Property Name="QNO_1" Type="int" />
+    <Property Name="ANS_1" Type="varchar" MaxLength="50" />
+    <Property Name="HNT_1" Type="varchar" MaxLength="50" />
+    <Property Name="QNO_2" Type="int" />
+    <Property Name="ANS_2" Type="varchar" MaxLength="50" />
+    <Property Name="HNT_2" Type="varchar" MaxLength="50" />
+    <Property Name="QNO_3" Type="int" />
+    <Property Name="ANS_3" Type="varchar" MaxLength="50" />
+    <Property Name="HNT_3" Type="varchar" MaxLength="50" />
+    <Property Name="STAT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ROLE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SCHEDULER_EXECUTION_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMMUNICATION_MODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CONTACT_ID" Type="varchar" MaxLength="25" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="RES_ID" Type="int" Nullable="false" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="SCHEDULER_ID" Type="int" Nullable="false" />
+    <Property Name="EXECUTION_START_TIME" Type="datetime" />
+    <Property Name="EXECUTION_END_TIME" Type="datetime" />
+    <Property Name="STAT" Type="varchar" MaxLength="25" />
+    <Property Name="STAT_MSG" Type="varchar" MaxLength="512" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SCHEDULER_FREQUENCY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="SCHEDULER_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="FREQUENCY_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="TRIGGER_START_TIME" Type="time" Precision="7" />
+    <Property Name="INTERVAL" Type="int" />
+    <Property Name="INTERVAL_DURATION" Type="varchar" MaxLength="25" />
+    <Property Name="SCHEDULE_SUN" Type="bit" Nullable="false" />
+    <Property Name="SCHEDULE_MON" Type="bit" Nullable="false" />
+    <Property Name="SCHEDULE_TUE" Type="bit" Nullable="false" />
+    <Property Name="SCHEDULE_WED" Type="bit" Nullable="false" />
+    <Property Name="SCHEDULE_THU" Type="bit" Nullable="false" />
+    <Property Name="SCHEDULE_FRI" Type="bit" Nullable="false" />
+    <Property Name="SCHEDULE_SAT" Type="bit" Nullable="false" />
+    <Property Name="STAT" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SCHEDULER_TYPE_LKUP">
+    <Key>
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SCREEN_ACTION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SCREEN_NAME" Type="varchar" MaxLength="255" />
+    <Property Name="ACTION" Type="varchar" MaxLength="255" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SETTINGS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SESSION_TIMEOUT_IN_MINS" Type="int" Nullable="false" />
+    <Property Name="SMTP_CLIENT" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SMTP_PORT" Type="int" Nullable="false" />
+    <Property Name="ENABLE_SSL" Type="bit" Nullable="false" />
+    <Property Name="USE_DEFAULT_CREDENTIALS" Type="bit" Nullable="false" />
+    <Property Name="ADDR1_ID" Type="int" />
+    <Property Name="ADDR2_ID" Type="int" />
+    <Property Name="PUBLIC_MSG" Type="varchar" MaxLength="2048" />
+    <Property Name="MSG_EFF_FROM" Type="datetime" />
+    <Property Name="MSG_EFF_TO" Type="datetime" />
+    <Property Name="STAT" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SIGNATURE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" />
+    <Property Name="RES_ID" Type="int" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="SIGNATURE_CONTENT" Type="varchar(max)" />
+    <Property Name="SIGNATURE_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="IS_DEFAULT" Type="bit" />
+    <Property Name="IS_DELETED" Type="varchar" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="50" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="50" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SKILL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TECH_SKILLS" Type="varchar" MaxLength="255" />
+    <Property Name="SOFT_SKILLS" Type="varchar" MaxLength="255" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SKILL_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DT_CR" Type="datetime" Nullable="false" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SMTP_CLIENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MSG_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="SMTP_CLIENT1" Type="varchar" MaxLength="50" />
+    <Property Name="SMTP_PORT" Type="int" Nullable="false" />
+    <Property Name="ENABLE_SSL" Type="bit" Nullable="false" />
+    <Property Name="REQ_AUTHENTICATION" Type="bit" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="PWD" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SOCIALMEDIA_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SOCIALMEDIA_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="SOCIALMEDIA_URL" Type="varchar(max)" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="50" />
+    <Property Name="DT_MOD" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="50" />
+    <Property Name="IS_DELETED" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SOURCE_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SOURCE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="50" />
+    <Property Name="WEBSITE" Type="varchar" MaxLength="50" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="STATUS_LKUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="STATE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SUBMISSION_STATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="POSTING_SUBMISSION_ID" Type="int" Nullable="false" />
+    <Property Name="STATUS" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="INTERVIEW_DT" Type="datetime" />
+    <Property Name="INTERVIEW_TIME" Type="varchar" MaxLength="15" />
+    <Property Name="INTERVIEWER" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="PHONE" Type="varchar" MaxLength="20" />
+    <Property Name="LOCATION" Type="varchar" MaxLength="255" />
+    <Property Name="COMMENTS" Type="varchar" MaxLength="500" />
+    <Property Name="INTERVIEWER_RATING" Type="int" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="25" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="25" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SUBSCRIBER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MIDDLE_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="LAST_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="ADDR_ID" Type="int" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="NOTIFICATION_ID" Type="int" Nullable="false" />
+    <Property Name="EMAIL_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ROLE" Type="varchar" MaxLength="25" />
+    <Property Name="STAT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SUBSCRIPTION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="SUBSCR_PKG_ID" Type="int" Nullable="false" />
+    <Property Name="TRIAL_START_DT" Type="datetime" Nullable="false" />
+    <Property Name="EFF_FROM" Type="datetime" Nullable="false" />
+    <Property Name="EFF_TO" Type="datetime" Nullable="false" />
+    <Property Name="PYMT_NUM" Type="int" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SUBSCRIPTION_PACKAGE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SPKG_PERIOD_ID" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PERIOD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="USD_COST" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="EUR_COST" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="UK_COST" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="INR_COST" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SUBSCRIPTION_PACKAGE_PERIOD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EFF_FROM" Type="datetime" Nullable="false" />
+    <Property Name="EFF_TO" Type="datetime" Nullable="false" />
+    <Property Name="TRIAL" Type="bit" Nullable="false" />
+    <Property Name="PKG_CNT" Type="int" Nullable="false" />
+    <Property Name="DESCR" Type="varchar" MaxLength="100" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TEMPLATE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="CONTENT" Type="varbinary(max)" />
+    <Property Name="EMAIL_TO" Type="varchar" MaxLength="50" />
+    <Property Name="SUBJECT" Type="varchar" MaxLength="100" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PWD" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TIMESHEET">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WEEK_CAL_ID" Type="int" Nullable="false" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+    <Property Name="RES_ID" Type="int" Nullable="false" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TIMESHEET_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TIMESHEET_ID" Type="int" Nullable="false" />
+    <Property Name="WORKFLOW_ID" Type="int" />
+    <Property Name="STAT" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NOTES" Type="varchar" MaxLength="512" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TIMESHEET_WORKFLOW">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORG_RES_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="PREV_STATE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="ACTION" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NEXT_STATE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NEXT_RES_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="USER_DETAILS">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="FIRST_NAME" />
+      <PropertyRef Name="LAST_NAME" />
+      <PropertyRef Name="EMAIL_ID" />
+      <PropertyRef Name="COMP_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LAST_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMAIL_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ROLE" Type="varchar" MaxLength="25" />
+    <Property Name="COMP_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RES_ID" Type="int" Nullable="false" />
+    <Property Name="RES_TYPE" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="PWD" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="USER_ACTIVATED" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="QNO_1" Type="int" Nullable="false" />
+    <Property Name="ANS_1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="QNO_2" Type="int" Nullable="false" />
+    <Property Name="ANS_2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="QNO_3" Type="int" Nullable="false" />
+    <Property Name="ANS_3" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="STAT" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <EntityType Name="VENDOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TYPE" Type="varchar" MaxLength="25" />
+    <Property Name="ADDR_ID" Type="int" />
+    <Property Name="PHONE_NUM1" Type="varchar" MaxLength="12" />
+    <Property Name="PHONE_NUM2" Type="varchar" MaxLength="12" />
+    <Property Name="FAX_NUM" Type="varchar" MaxLength="12" />
+    <Property Name="EMAIL_ID" Type="varchar" MaxLength="225" />
+    <Property Name="WEBSITE" Type="varchar" MaxLength="512" />
+    <Property Name="DOMAIN" Type="varchar" MaxLength="25" />
+    <Property Name="STAT" Type="varchar" MaxLength="10" />
+    <Property Name="NOTES" Type="varchar" MaxLength="5000" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+    <Property Name="COMP_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="WEEK_CALENDER">
+    <Key>
+      <PropertyRef Name="YEAR" />
+      <PropertyRef Name="WEEK_NUM" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="YEAR" Type="int" Nullable="false" />
+    <Property Name="WEEK_NUM" Type="int" Nullable="false" />
+    <Property Name="WEEK_START_DT" Type="datetime" Nullable="false" />
+    <Property Name="WEEK_END_DT" Type="datetime" Nullable="false" />
+    <Property Name="IS_DELETED" Type="char" MaxLength="1" />
+    <Property Name="CR_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_CR" Type="datetime" />
+    <Property Name="MOD_BY" Type="varchar" MaxLength="15" />
+    <Property Name="DT_MOD" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_ARTIFACT_ARTIFACT_TYPE_LKUP">
+    <End Role="ARTIFACT_TYPE_LKUP" Type="Self.ARTIFACT_TYPE_LKUP" Multiplicity="1" />
+    <End Role="ARTIFACT" Type="Self.ARTIFACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ARTIFACT_TYPE_LKUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ARTIFACT">
+        <PropertyRef Name="ARTIFACT_TYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CANDIDATE_ADDRESS">
+    <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="1" />
+    <End Role="CANDIDATE" Type="Self.CANDIDATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADDRESS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CANDIDATE">
+        <PropertyRef Name="ADDR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CANDIDATE_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="CANDIDATE" Type="Self.CANDIDATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CANDIDATE">
+        <PropertyRef Name="REC_COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CANDIDATE_ID">
+    <End Role="CANDIDATE" Type="Self.CANDIDATE" Multiplicity="0..1" />
+    <End Role="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" Type="Self.CANDIDATE_SOCIALMEDIA_SELECTED_URLS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CANDIDATE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CANDIDATE_SOCIALMEDIA_SELECTED_URLS">
+        <PropertyRef Name="CANDIDATE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CANDIDATE_NOTIFICATION">
+    <End Role="NOTIFICATION" Type="Self.NOTIFICATION" Multiplicity="1" />
+    <End Role="CANDIDATE" Type="Self.CANDIDATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTIFICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CANDIDATE">
+        <PropertyRef Name="NOTIFICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CANDIDATE_SKILL">
+    <End Role="SKILL" Type="Self.SKILL" Multiplicity="0..1" />
+    <End Role="CANDIDATE" Type="Self.CANDIDATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKILL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CANDIDATE">
+        <PropertyRef Name="SKILL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMP_ID">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="0..1" />
+    <End Role="SIGNATURE" Type="Self.SIGNATURE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SIGNATURE">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMPANY_ADDRESS">
+    <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="1" />
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADDRESS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="COMPANY">
+        <PropertyRef Name="ADDR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMPANY_CLIENTS_CLIENT">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+    <End Role="COMPANY_CLIENTS" Type="Self.COMPANY_CLIENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="COMPANY_CLIENTS">
+        <PropertyRef Name="CLIENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMPANY_CLIENTS_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="COMPANY_CLIENTS" Type="Self.COMPANY_CLIENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="COMPANY_CLIENTS">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COMPANY_NOTIFICATION">
+    <End Role="NOTIFICATION" Type="Self.NOTIFICATION" Multiplicity="0..1" />
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTIFICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="COMPANY">
+        <PropertyRef Name="NOTIFICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACTOR_ADDRESS">
+    <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="1" />
+    <End Role="CONTRACTOR" Type="Self.CONTRACTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADDRESS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CONTRACTOR">
+        <PropertyRef Name="ADDR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACTOR_CLIENT">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+    <End Role="CONTRACTOR" Type="Self.CONTRACTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CONTRACTOR">
+        <PropertyRef Name="CLIENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACTOR_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="CONTRACTOR" Type="Self.CONTRACTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CONTRACTOR">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACTOR_CONTRACTOR">
+    <End Role="CONTRACTOR" Type="Self.CONTRACTOR" Multiplicity="1" />
+    <End Role="CONTRACTOR1" Type="Self.CONTRACTOR" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CONTRACTOR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CONTRACTOR1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACTOR_NOTIFICATION">
+    <End Role="NOTIFICATION" Type="Self.NOTIFICATION" Multiplicity="1" />
+    <End Role="CONTRACTOR" Type="Self.CONTRACTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTIFICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CONTRACTOR">
+        <PropertyRef Name="NOTIFICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACTOR_SKILL">
+    <End Role="SKILL" Type="Self.SKILL" Multiplicity="0..1" />
+    <End Role="CONTRACTOR" Type="Self.CONTRACTOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKILL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CONTRACTOR">
+        <PropertyRef Name="SKILL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_ADDRESS">
+    <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="1" />
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADDRESS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="ADDR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_CLIENT">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="0..1" />
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="CLIENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_NOTIFICATION">
+    <End Role="NOTIFICATION" Type="Self.NOTIFICATION" Multiplicity="1" />
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTIFICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="NOTIFICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_SKILL">
+    <End Role="SKILL" Type="Self.SKILL" Multiplicity="0..1" />
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKILL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEE">
+        <PropertyRef Name="SKILL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_FEATURE_ACCESS_RL_FEATURE">
+    <End Role="RL_FEATURE" Type="Self.RL_FEATURE" Multiplicity="1" />
+    <End Role="FEATURE_ACCESS" Type="Self.FEATURE_ACCESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RL_FEATURE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FEATURE_ACCESS">
+        <PropertyRef Name="FEATURE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_FEATURE_ACCESS_SCREEN_ACTION">
+    <End Role="SCREEN_ACTION" Type="Self.SCREEN_ACTION" Multiplicity="1" />
+    <End Role="FEATURE_ACCESS" Type="Self.FEATURE_ACCESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SCREEN_ACTION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FEATURE_ACCESS">
+        <PropertyRef Name="SCREEN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOURS_LOGGED_PROJECT">
+    <End Role="PROJECT" Type="Self.PROJECT" Multiplicity="1" />
+    <End Role="HOURS_LOGGED" Type="Self.HOURS_LOGGED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJECT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HOURS_LOGGED">
+        <PropertyRef Name="PROJ_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOURS_LOGGED_TIMESHEET">
+    <End Role="TIMESHEET" Type="Self.TIMESHEET" Multiplicity="1" />
+    <End Role="HOURS_LOGGED" Type="Self.HOURS_LOGGED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIMESHEET">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HOURS_LOGGED">
+        <PropertyRef Name="TIMESHEET_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_INVOICE_SUBSCRIPTION">
+    <End Role="SUBSCRIPTION" Type="Self.SUBSCRIPTION" Multiplicity="1" />
+    <End Role="INVOICE" Type="Self.INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUBSCRIPTION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="INVOICE">
+        <PropertyRef Name="SUBSCRIPTION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_INVOICE_SUBSCRIPTION_PACKAGE">
+    <End Role="SUBSCRIPTION_PACKAGE" Type="Self.SUBSCRIPTION_PACKAGE" Multiplicity="1" />
+    <End Role="INVOICE" Type="Self.INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUBSCRIPTION_PACKAGE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="INVOICE">
+        <PropertyRef Name="SUBSCR_PKG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JOB_POSTING_SKILL">
+    <End Role="SKILL" Type="Self.SKILL" Multiplicity="0..1" />
+    <End Role="JOB" Type="Self.JOB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SKILL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JOB">
+        <PropertyRef Name="SKILL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROJECT_RESOURCE_PROJECT">
+    <End Role="PROJECT" Type="Self.PROJECT" Multiplicity="1" />
+    <End Role="PROJECT_RESOURCE" Type="Self.PROJECT_RESOURCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROJECT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PROJECT_RESOURCE">
+        <PropertyRef Name="PROJ_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_REQUIREMENT_POSTING_JOB_POSTING">
+    <End Role="JOB" Type="Self.JOB" Multiplicity="1" />
+    <End Role="JOB_POSTING" Type="Self.JOB_POSTING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JOB">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JOB_POSTING">
+        <PropertyRef Name="JOB_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RES_ID">
+    <End Role="RL_USERS" Type="Self.RL_USERS" Multiplicity="0..1" />
+    <End Role="SIGNATURE" Type="Self.SIGNATURE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RL_USERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SIGNATURE">
+        <PropertyRef Name="RES_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RESOURCE_PROFILE_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="RESOURCE_PROFILE" Type="Self.RESOURCE_PROFILE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RESOURCE_PROFILE">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RESOURCE_PROFILE_RESOURCE_PROFILE">
+    <End Role="RESOURCE_PROFILE" Type="Self.RESOURCE_PROFILE" Multiplicity="1" />
+    <End Role="RESOURCE_PROFILE1" Type="Self.RESOURCE_PROFILE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RESOURCE_PROFILE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RESOURCE_PROFILE1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SCHEDULER_FREQUENCY_LKUP1">
+    <End Role="SCHEDULER_TYPE_LKUP" Type="Self.SCHEDULER_TYPE_LKUP" Multiplicity="1" />
+    <End Role="SCHEDULER_FREQUENCY" Type="Self.SCHEDULER_FREQUENCY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SCHEDULER_TYPE_LKUP">
+        <PropertyRef Name="TYPE" />
+      </Principal>
+      <Dependent Role="SCHEDULER_FREQUENCY">
+        <PropertyRef Name="SCHEDULER_TYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SCHEDULER_FREQUENCY_LKUP2">
+    <End Role="FREQUENCY_LKUP" Type="Self.FREQUENCY_LKUP" Multiplicity="1" />
+    <End Role="SCHEDULER_FREQUENCY" Type="Self.SCHEDULER_FREQUENCY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FREQUENCY_LKUP">
+        <PropertyRef Name="TYPE" />
+      </Principal>
+      <Dependent Role="SCHEDULER_FREQUENCY">
+        <PropertyRef Name="FREQUENCY_TYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SCHEDULER_FREQUENCY_LKUP3">
+    <End Role="DURATION_LKUP" Type="Self.DURATION_LKUP" Multiplicity="0..1" />
+    <End Role="SCHEDULER_FREQUENCY" Type="Self.SCHEDULER_FREQUENCY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DURATION_LKUP">
+        <PropertyRef Name="TYPE" />
+      </Principal>
+      <Dependent Role="SCHEDULER_FREQUENCY">
+        <PropertyRef Name="INTERVAL_DURATION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOCIALMEDIA_SELECTED_ID">
+    <End Role="SOCIALMEDIA_LKUP" Type="Self.SOCIALMEDIA_LKUP" Multiplicity="0..1" />
+    <End Role="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" Type="Self.CANDIDATE_SOCIALMEDIA_SELECTED_URLS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIALMEDIA_LKUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CANDIDATE_SOCIALMEDIA_SELECTED_URLS">
+        <PropertyRef Name="SOCIALMEDIA_SELECTED" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUBMISSION_STATUS_SUBSCRIBER_RESOURCE_SUBMISSION">
+    <End Role="POSTING_SUBMISSION" Type="Self.POSTING_SUBMISSION" Multiplicity="1" />
+    <End Role="SUBMISSION_STATUS" Type="Self.SUBMISSION_STATUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="POSTING_SUBMISSION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBMISSION_STATUS">
+        <PropertyRef Name="POSTING_SUBMISSION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUBSCRIBER_ADDRESS">
+    <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="0..1" />
+    <End Role="SUBSCRIBER" Type="Self.SUBSCRIBER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADDRESS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBSCRIBER">
+        <PropertyRef Name="ADDR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUBSCRIBER_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="SUBSCRIBER" Type="Self.SUBSCRIBER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBSCRIBER">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUBSCRIBER_NOTIFICATION">
+    <End Role="NOTIFICATION" Type="Self.NOTIFICATION" Multiplicity="1" />
+    <End Role="SUBSCRIBER" Type="Self.SUBSCRIBER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOTIFICATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBSCRIBER">
+        <PropertyRef Name="NOTIFICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SUBSCRIPTION_COMPANY">
+    <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+    <End Role="SUBSCRIPTION" Type="Self.SUBSCRIPTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBSCRIPTION">
+        <PropertyRef Name="COMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SUBSCRIPTION_PACKAGE_SUBSCRIPTION_PACKAGE_PERIOD">
+    <End Role="SUBSCRIPTION_PACKAGE_PERIOD" Type="Self.SUBSCRIPTION_PACKAGE_PERIOD" Multiplicity="1" />
+    <End Role="SUBSCRIPTION_PACKAGE" Type="Self.SUBSCRIPTION_PACKAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUBSCRIPTION_PACKAGE_PERIOD">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBSCRIPTION_PACKAGE">
+        <PropertyRef Name="SPKG_PERIOD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SUBSCRIPTION_SUBSCRIPTION_PACKAGE">
+    <End Role="SUBSCRIPTION_PACKAGE" Type="Self.SUBSCRIPTION_PACKAGE" Multiplicity="1" />
+    <End Role="SUBSCRIPTION" Type="Self.SUBSCRIPTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUBSCRIPTION_PACKAGE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBSCRIPTION">
+        <PropertyRef Name="SUBSCR_PKG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TIMESHEET_LOG_TIMESHEET">
+    <End Role="TIMESHEET" Type="Self.TIMESHEET" Multiplicity="1" />
+    <End Role="TIMESHEET_LOG" Type="Self.TIMESHEET_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIMESHEET">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TIMESHEET_LOG">
+        <PropertyRef Name="TIMESHEET_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_ACCTUNLOCKUSER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Creatingweeknumbersbasedonyear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="ReslandModelStoreContainer">
+    <EntitySet Name="ACTIVITY" EntityType="Self.ACTIVITY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACTIVITY_LKUP" EntityType="Self.ACTIVITY_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADDRESS" EntityType="Self.ADDRESS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ARTIFACT" EntityType="Self.ARTIFACT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ARTIFACT_TYPE_LKUP" EntityType="Self.ARTIFACT_TYPE_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CANDIDATE" EntityType="Self.CANDIDATE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" EntityType="Self.CANDIDATE_SOCIALMEDIA_SELECTED_URLS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CATEGORY_LKUP" EntityType="Self.CATEGORY_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLIENT" EntityType="Self.CLIENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMPANY" EntityType="Self.COMPANY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMPANY_CLIENTS" EntityType="Self.COMPANY_CLIENTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMPANY_HOLIDAY" EntityType="Self.COMPANY_HOLIDAY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONTACT_MODE_LKUP" EntityType="Self.CONTACT_MODE_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONTRACTOR" EntityType="Self.CONTRACTOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COUNTRY_LKUP" EntityType="Self.COUNTRY_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DURATION_LKUP" EntityType="Self.DURATION_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMAIL_LOG" EntityType="Self.EMAIL_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLOYEE" EntityType="Self.EMPLOYEE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ETHINIC_LKUP" EntityType="Self.ETHINIC_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FEATURE_ACCESS" EntityType="Self.FEATURE_ACCESS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FEATURE_SCREEN" EntityType="Self.FEATURE_SCREEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FREQUENCY_LKUP" EntityType="Self.FREQUENCY_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOURS_LOGGED" EntityType="Self.HOURS_LOGGED" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INVOICE" EntityType="Self.INVOICE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JOB" EntityType="Self.JOB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JOB_APPLICATION" EntityType="Self.JOB_APPLICATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JOB_CANDIDATE" EntityType="Self.JOB_CANDIDATE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JOB_POSTING" EntityType="Self.JOB_POSTING" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JOB_TYPE_LKUP" EntityType="Self.JOB_TYPE_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOTIFICATION" EntityType="Self.NOTIFICATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PACKAGE_FEATURE" EntityType="Self.PACKAGE_FEATURE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAYMENT_PERIOD_LKUP" EntityType="Self.PAYMENT_PERIOD_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAYMENT_TYPE_LKUP" EntityType="Self.PAYMENT_TYPE_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PERIOD_LKUP" EntityType="Self.PERIOD_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="POSTING_SUBMISSION" EntityType="Self.POSTING_SUBMISSION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROCESSING_STATE_LKUP" EntityType="Self.PROCESSING_STATE_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROJECT" EntityType="Self.PROJECT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROJECT_RESOURCE" EntityType="Self.PROJECT_RESOURCE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QUESTION_LKUP" EntityType="Self.QUESTION_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESIDENCY_LKUP" EntityType="Self.RESIDENCY_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESOURCE_PRIVILEGE_LKUP" EntityType="Self.RESOURCE_PRIVILEGE_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESOURCE_PROFILE" EntityType="Self.RESOURCE_PROFILE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESOURCE_TYPE_LKUP" EntityType="Self.RESOURCE_TYPE_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RL_FEATURE" EntityType="Self.RL_FEATURE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RL_LOG" EntityType="Self.RL_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RL_USER_LOG_DETAILS" EntityType="Self.RL_USER_LOG_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RL_USER_LOGIN_ATTEMPT" EntityType="Self.RL_USER_LOGIN_ATTEMPT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RL_USER_TRACK_LOGGING" EntityType="Self.RL_USER_TRACK_LOGGING" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RL_USERS" EntityType="Self.RL_USERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROLE_LKUP" EntityType="Self.ROLE_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SCHEDULER_EXECUTION_LOG" EntityType="Self.SCHEDULER_EXECUTION_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SCHEDULER_FREQUENCY" EntityType="Self.SCHEDULER_FREQUENCY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SCHEDULER_TYPE_LKUP" EntityType="Self.SCHEDULER_TYPE_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SCREEN_ACTION" EntityType="Self.SCREEN_ACTION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETTINGS" EntityType="Self.SETTINGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SIGNATURE" EntityType="Self.SIGNATURE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SKILL" EntityType="Self.SKILL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SKILL_LKUP" EntityType="Self.SKILL_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMTP_CLIENT" EntityType="Self.SMTP_CLIENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOCIALMEDIA_LKUP" EntityType="Self.SOCIALMEDIA_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOURCE_LKUP" EntityType="Self.SOURCE_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STATUS_LKUP" EntityType="Self.STATUS_LKUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUBMISSION_STATUS" EntityType="Self.SUBMISSION_STATUS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUBSCRIBER" EntityType="Self.SUBSCRIBER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUBSCRIPTION" EntityType="Self.SUBSCRIPTION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUBSCRIPTION_PACKAGE" EntityType="Self.SUBSCRIPTION_PACKAGE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUBSCRIPTION_PACKAGE_PERIOD" EntityType="Self.SUBSCRIPTION_PACKAGE_PERIOD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEMPLATE" EntityType="Self.TEMPLATE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIMESHEET" EntityType="Self.TIMESHEET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIMESHEET_LOG" EntityType="Self.TIMESHEET_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIMESHEET_WORKFLOW" EntityType="Self.TIMESHEET_WORKFLOW" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER_DETAILS" EntityType="Self.USER_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VENDOR" EntityType="Self.VENDOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WEEK_CALENDER" EntityType="Self.WEEK_CALENDER" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ARTIFACT_ARTIFACT_TYPE_LKUP" Association="Self.FK_ARTIFACT_ARTIFACT_TYPE_LKUP">
+      <End Role="ARTIFACT_TYPE_LKUP" EntitySet="ARTIFACT_TYPE_LKUP" />
+      <End Role="ARTIFACT" EntitySet="ARTIFACT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CANDIDATE_ADDRESS" Association="Self.FK_CANDIDATE_ADDRESS">
+      <End Role="ADDRESS" EntitySet="ADDRESS" />
+      <End Role="CANDIDATE" EntitySet="CANDIDATE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CANDIDATE_COMPANY" Association="Self.FK_CANDIDATE_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANY" />
+      <End Role="CANDIDATE" EntitySet="CANDIDATE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CANDIDATE_ID" Association="Self.FK_CANDIDATE_ID">
+      <End Role="CANDIDATE" EntitySet="CANDIDATE" />
+      <End Role="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" EntitySet="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CANDIDATE_NOTIFICATION" Association="Self.FK_CANDIDATE_NOTIFICATION">
+      <End Role="NOTIFICATION" EntitySet="NOTIFICATION" />
+      <End Role="CANDIDATE" EntitySet="CANDIDATE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CANDIDATE_SKILL" Association="Self.FK_CANDIDATE_SKILL">
+      <End Role="SKILL" EntitySet="SKILL" />
+      <End Role="CANDIDATE" EntitySet="CANDIDATE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMP_ID" Association="Self.FK_COMP_ID">
+      <End Role="COMPANY" EntitySet="COMPANY" />
+      <End Role="SIGNATURE" EntitySet="SIGNATURE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMPANY_ADDRESS" Association="Self.FK_COMPANY_ADDRESS">
+      <End Role="ADDRESS" EntitySet="ADDRESS" />
+      <End Role="COMPANY" EntitySet="COMPANY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMPANY_CLIENTS_CLIENT" Association="Self.FK_COMPANY_CLIENTS_CLIENT">
+      <End Role="CLIENT" EntitySet="CLIENT" />
+      <End Role="COMPANY_CLIENTS" EntitySet="COMPANY_CLIENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMPANY_CLIENTS_COMPANY" Association="Self.FK_COMPANY_CLIENTS_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANY" />
+      <End Role="COMPANY_CLIENTS" EntitySet="COMPANY_CLIENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COMPANY_NOTIFICATION" Association="Self.FK_COMPANY_NOTIFICATION">
+      <End Role="NOTIFICATION" EntitySet="NOTIFICATION" />
+      <End Role="COMPANY" EntitySet="COMPANY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACTOR_ADDRESS" Association="Self.FK_CONTRACTOR_ADDRESS">
+      <End Role="ADDRESS" EntitySet="ADDRESS" />
+      <End Role="CONTRACTOR" EntitySet="CONTRACTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACTOR_CLIENT" Association="Self.FK_CONTRACTOR_CLIENT">
+      <End Role="CLIENT" EntitySet="CLIENT" />
+      <End Role="CONTRACTOR" EntitySet="CONTRACTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACTOR_COMPANY" Association="Self.FK_CONTRACTOR_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANY" />
+      <End Role="CONTRACTOR" EntitySet="CONTRACTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACTOR_CONTRACTOR" Association="Self.FK_CONTRACTOR_CONTRACTOR">
+      <End Role="CONTRACTOR" EntitySet="CONTRACTOR" />
+      <End Role="CONTRACTOR1" EntitySet="CONTRACTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACTOR_NOTIFICATION" Association="Self.FK_CONTRACTOR_NOTIFICATION">
+      <End Role="NOTIFICATION" EntitySet="NOTIFICATION" />
+      <End Role="CONTRACTOR" EntitySet="CONTRACTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACTOR_SKILL" Association="Self.FK_CONTRACTOR_SKILL">
+      <End Role="SKILL" EntitySet="SKILL" />
+      <End Role="CONTRACTOR" EntitySet="CONTRACTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_ADDRESS" Association="Self.FK_EMPLOYEE_ADDRESS">
+      <End Role="ADDRESS" EntitySet="ADDRESS" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_CLIENT" Association="Self.FK_EMPLOYEE_CLIENT">
+      <End Role="CLIENT" EntitySet="CLIENT" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_COMPANY" Association="Self.FK_EMPLOYEE_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANY" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_NOTIFICATION" Association="Self.FK_EMPLOYEE_NOTIFICATION">
+      <End Role="NOTIFICATION" EntitySet="NOTIFICATION" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_SKILL" Association="Self.FK_EMPLOYEE_SKILL">
+      <End Role="SKILL" EntitySet="SKILL" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_FEATURE_ACCESS_RL_FEATURE" Association="Self.fk_FEATURE_ACCESS_RL_FEATURE">
+      <End Role="RL_FEATURE" EntitySet="RL_FEATURE" />
+      <End Role="FEATURE_ACCESS" EntitySet="FEATURE_ACCESS" />
+    </AssociationSet>
+    <AssociationSet Name="fk_FEATURE_ACCESS_SCREEN_ACTION" Association="Self.fk_FEATURE_ACCESS_SCREEN_ACTION">
+      <End Role="SCREEN_ACTION" EntitySet="SCREEN_ACTION" />
+      <End Role="FEATURE_ACCESS" EntitySet="FEATURE_ACCESS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOURS_LOGGED_PROJECT" Association="Self.FK_HOURS_LOGGED_PROJECT">
+      <End Role="PROJECT" EntitySet="PROJECT" />
+      <End Role="HOURS_LOGGED" EntitySet="HOURS_LOGGED" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOURS_LOGGED_TIMESHEET" Association="Self.FK_HOURS_LOGGED_TIMESHEET">
+      <End Role="TIMESHEET" EntitySet="TIMESHEET" />
+      <End Role="HOURS_LOGGED" EntitySet="HOURS_LOGGED" />
+    </AssociationSet>
+    <AssociationSet Name="fk_INVOICE_SUBSCRIPTION" Association="Self.fk_INVOICE_SUBSCRIPTION">
+      <End Role="SUBSCRIPTION" EntitySet="SUBSCRIPTION" />
+      <End Role="INVOICE" EntitySet="INVOICE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_INVOICE_SUBSCRIPTION_PACKAGE" Association="Self.fk_INVOICE_SUBSCRIPTION_PACKAGE">
+      <End Role="SUBSCRIPTION_PACKAGE" EntitySet="SUBSCRIPTION_PACKAGE" />
+      <End Role="INVOICE" EntitySet="INVOICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JOB_POSTING_SKILL" Association="Self.FK_JOB_POSTING_SKILL">
+      <End Role="SKILL" EntitySet="SKILL" />
+      <End Role="JOB" EntitySet="JOB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROJECT_RESOURCE_PROJECT" Association="Self.FK_PROJECT_RESOURCE_PROJECT">
+      <End Role="PROJECT" EntitySet="PROJECT" />
+      <End Role="PROJECT_RESOURCE" EntitySet="PROJECT_RESOURCE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_REQUIREMENT_POSTING_JOB_POSTING" Association="Self.FK_REQUIREMENT_POSTING_JOB_POSTING">
+      <End Role="JOB" EntitySet="JOB" />
+      <End Role="JOB_POSTING" EntitySet="JOB_POSTING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RES_ID" Association="Self.FK_RES_ID">
+      <End Role="RL_USERS" EntitySet="RL_USERS" />
+      <End Role="SIGNATURE" EntitySet="SIGNATURE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RESOURCE_PROFILE_COMPANY" Association="Self.FK_RESOURCE_PROFILE_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANY" />
+      <End Role="RESOURCE_PROFILE" EntitySet="RESOURCE_PROFILE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RESOURCE_PROFILE_RESOURCE_PROFILE" Association="Self.FK_RESOURCE_PROFILE_RESOURCE_PROFILE">
+      <End Role="RESOURCE_PROFILE" EntitySet="RESOURCE_PROFILE" />
+      <End Role="RESOURCE_PROFILE1" EntitySet="RESOURCE_PROFILE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SCHEDULER_FREQUENCY_LKUP1" Association="Self.fk_SCHEDULER_FREQUENCY_LKUP1">
+      <End Role="SCHEDULER_TYPE_LKUP" EntitySet="SCHEDULER_TYPE_LKUP" />
+      <End Role="SCHEDULER_FREQUENCY" EntitySet="SCHEDULER_FREQUENCY" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SCHEDULER_FREQUENCY_LKUP2" Association="Self.fk_SCHEDULER_FREQUENCY_LKUP2">
+      <End Role="FREQUENCY_LKUP" EntitySet="FREQUENCY_LKUP" />
+      <End Role="SCHEDULER_FREQUENCY" EntitySet="SCHEDULER_FREQUENCY" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SCHEDULER_FREQUENCY_LKUP3" Association="Self.fk_SCHEDULER_FREQUENCY_LKUP3">
+      <End Role="DURATION_LKUP" EntitySet="DURATION_LKUP" />
+      <End Role="SCHEDULER_FREQUENCY" EntitySet="SCHEDULER_FREQUENCY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOCIALMEDIA_SELECTED_ID" Association="Self.FK_SOCIALMEDIA_SELECTED_ID">
+      <End Role="SOCIALMEDIA_LKUP" EntitySet="SOCIALMEDIA_LKUP" />
+      <End Role="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" EntitySet="CANDIDATE_SOCIALMEDIA_SELECTED_URLS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUBMISSION_STATUS_SUBSCRIBER_RESOURCE_SUBMISSION" Association="Self.FK_SUBMISSION_STATUS_SUBSCRIBER_RESOURCE_SUBMISSION">
+      <End Role="POSTING_SUBMISSION" EntitySet="POSTING_SUBMISSION" />
+      <End Role="SUBMISSION_STATUS" EntitySet="SUBMISSION_STATUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUBSCRIBER_ADDRESS" Association="Self.FK_SUBSCRIBER_ADDRESS">
+      <End Role="ADDRESS" EntitySet="ADDRESS" />
+      <End Role="SUBSCRIBER" EntitySet="SUBSCRIBER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUBSCRIBER_COMPANY" Association="Self.FK_SUBSCRIBER_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANY" />
+      <End Role="SUBSCRIBER" EntitySet="SUBSCRIBER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUBSCRIBER_NOTIFICATION" Association="Self.FK_SUBSCRIBER_NOTIFICATION">
+      <End Role="NOTIFICATION" EntitySet="NOTIFICATION" />
+      <End Role="SUBSCRIBER" EntitySet="SUBSCRIBER" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SUBSCRIPTION_COMPANY" Association="Self.fk_SUBSCRIPTION_COMPANY">
+      <End Role="COMPANY" EntitySet="COMPANY" />
+      <End Role="SUBSCRIPTION" EntitySet="SUBSCRIPTION" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SUBSCRIPTION_PACKAGE_SUBSCRIPTION_PACKAGE_PERIOD" Association="Self.fk_SUBSCRIPTION_PACKAGE_SUBSCRIPTION_PACKAGE_PERIOD">
+      <End Role="SUBSCRIPTION_PACKAGE_PERIOD" EntitySet="SUBSCRIPTION_PACKAGE_PERIOD" />
+      <End Role="SUBSCRIPTION_PACKAGE" EntitySet="SUBSCRIPTION_PACKAGE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SUBSCRIPTION_SUBSCRIPTION_PACKAGE" Association="Self.fk_SUBSCRIPTION_SUBSCRIPTION_PACKAGE">
+      <End Role="SUBSCRIPTION_PACKAGE" EntitySet="SUBSCRIPTION_PACKAGE" />
+      <End Role="SUBSCRIPTION" EntitySet="SUBSCRIPTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TIMESHEET_LOG_TIMESHEET" Association="Self.FK_TIMESHEET_LOG_TIMESHEET">
+      <End Role="TIMESHEET" EntitySet="TIMESHEET" />
+      <End Role="TIMESHEET_LOG" EntitySet="TIMESHEET_LOG" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

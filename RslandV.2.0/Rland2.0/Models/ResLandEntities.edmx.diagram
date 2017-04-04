@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b34350424544476da77d8379c27c5777" Name="Diagram1">
+        <EntityTypeShape EntityType="ReslandModel.ACTIVITY" Width="1.5" PointX="10.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.ACTIVITY_LKUP" Width="1.5" PointX="12.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.ADDRESS" Width="1.5" PointX="0.75" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.ARTIFACT" Width="1.5" PointX="13" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.ARTIFACT_TYPE_LKUP" Width="1.5" PointX="10.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.CANDIDATE" Width="1.5" PointX="3" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.CANDIDATE_SOCIALMEDIA_SELECTED_URLS" Width="1.5" PointX="8.25" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.CATEGORY_LKUP" Width="1.5" PointX="2.75" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.CLIENT" Width="1.5" PointX="6" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.COMPANY" Width="1.5" PointX="6" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.COMPANY_CLIENTS" Width="1.5" PointX="11.25" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.COMPANY_HOLIDAY" Width="1.5" PointX="14.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.CONTACT_MODE_LKUP" Width="1.5" PointX="15.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.CONTRACTOR" Width="1.5" PointX="14.25" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.COUNTRY_LKUP" Width="1.5" PointX="15.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.DURATION_LKUP" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.EMAIL_LOG" Width="1.5" PointX="10.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.EMPLOYEE" Width="1.5" PointX="8.25" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.ETHINIC_LKUP" Width="1.5" PointX="12.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.FEATURE_ACCESS" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.FEATURE_SCREEN" Width="1.5" PointX="14.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.FREQUENCY_LKUP" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.HOURS_LOGGED" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.INVOICE" Width="1.5" PointX="13.5" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.JOB" Width="1.5" PointX="3" PointY="48.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.JOB_APPLICATION" Width="1.5" PointX="16.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.JOB_CANDIDATE" Width="1.5" PointX="16.75" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.JOB_POSTING" Width="1.5" PointX="5.25" PointY="51" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.JOB_TYPE_LKUP" Width="1.5" PointX="17.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.NOTIFICATION" Width="1.5" PointX="3.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.PACKAGE_FEATURE" Width="1.5" PointX="17.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.PAYMENT_PERIOD_LKUP" Width="1.5" PointX="0.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.PAYMENT_TYPE_LKUP" Width="1.5" PointX="18.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.PERIOD_LKUP" Width="1.5" PointX="18.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.POSTING_SUBMISSION" Width="1.5" PointX="10.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.PROCESSING_STATE_LKUP" Width="1.5" PointX="18.75" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.PROJECT" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.PROJECT_RESOURCE" Width="1.5" PointX="8" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.QUESTION_LKUP" Width="1.5" PointX="19.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.RESIDENCY_LKUP" Width="1.5" PointX="19.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.RESOURCE_PRIVILEGE_LKUP" Width="1.5" PointX="13.75" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.RESOURCE_PROFILE" Width="1.5" PointX="8.25" PointY="51.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.RESOURCE_TYPE_LKUP" Width="1.5" PointX="15.75" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.RL_FEATURE" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.RL_LOG" Width="1.5" PointX="20.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.RL_USER_LOG_DETAILS" Width="1.5" PointX="20.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.RL_USER_LOGIN_ATTEMPT" Width="1.5" PointX="20.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.RL_USER_TRACK_LOGGING" Width="1.5" PointX="17.75" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.RL_USERS" Width="1.5" PointX="6" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.ROLE_LKUP" Width="1.5" PointX="21.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SCHEDULER_EXECUTION_LOG" Width="1.5" PointX="19.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SCHEDULER_FREQUENCY" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SCHEDULER_TYPE_LKUP" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SCREEN_ACTION" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SETTING" Width="1.5" PointX="21.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SIGNATURE" Width="1.5" PointX="8.25" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SKILL" Width="1.5" PointX="0.75" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SKILL_LKUP" Width="1.5" PointX="21.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SMTP_CLIENT" Width="1.5" PointX="22.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SOCIALMEDIA_LKUP" Width="1.5" PointX="6" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SOURCE_LKUP" Width="1.5" PointX="22.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.STATUS_LKUP" Width="1.5" PointX="22.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SUBMISSION_STATUS" Width="1.5" PointX="13" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SUBSCRIBER" Width="1.5" PointX="11.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SUBSCRIPTION" Width="1.5" PointX="11.25" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SUBSCRIPTION_PACKAGE" Width="1.5" PointX="9" PointY="43" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.SUBSCRIPTION_PACKAGE_PERIOD" Width="1.5" PointX="6.75" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.TEMPLATE" Width="1.5" PointX="23.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.TIMESHEET" Width="1.5" PointX="5.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.TIMESHEET_LOG" Width="1.5" PointX="8" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.TIMESHEET_WORKFLOW" Width="1.5" PointX="23.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.USER_DETAILS" Width="1.5" PointX="23.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.USER" Width="1.5" PointX="24.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.VENDOR" Width="1.5" PointX="24.75" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReslandModel.WEEK_CALENDER" Width="1.5" PointX="25.75" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="ReslandModel.FK_CANDIDATE_ADDRESS" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_COMPANY_ADDRESS" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_CONTRACTOR_ADDRESS" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_EMPLOYEE_ADDRESS" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_SUBSCRIBER_ADDRESS" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_ARTIFACT_ARTIFACT_TYPE_LKUP" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_CANDIDATE_COMPANY" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_CANDIDATE_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_CANDIDATE_NOTIFICATION" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_CANDIDATE_SKILL" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_SOCIALMEDIA_SELECTED_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_COMPANY_CLIENTS_CLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_CONTRACTOR_CLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_EMPLOYEE_CLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_COMP_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_COMPANY_CLIENTS_COMPANY" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_COMPANY_NOTIFICATION" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_CONTRACTOR_COMPANY" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_EMPLOYEE_COMPANY" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_RESOURCE_PROFILE_COMPANY" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_SUBSCRIBER_COMPANY" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.fk_SUBSCRIPTION_COMPANY" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_CONTRACTOR_CONTRACTOR" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_CONTRACTOR_NOTIFICATION" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_CONTRACTOR_SKILL" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.fk_SCHEDULER_FREQUENCY_LKUP3" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_EMPLOYEE_NOTIFICATION" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_EMPLOYEE_SKILL" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.fk_FEATURE_ACCESS_RL_FEATURE" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.fk_FEATURE_ACCESS_SCREEN_ACTION" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.fk_SCHEDULER_FREQUENCY_LKUP2" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_HOURS_LOGGED_PROJECT" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_HOURS_LOGGED_TIMESHEET" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.fk_INVOICE_SUBSCRIPTION" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.fk_INVOICE_SUBSCRIPTION_PACKAGE" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_JOB_POSTING_SKILL" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_REQUIREMENT_POSTING_JOB_POSTING" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_SUBSCRIBER_NOTIFICATION" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_SUBMISSION_STATUS_SUBSCRIBER_RESOURCE_SUBMISSION" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_PROJECT_RESOURCE_PROJECT" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_RESOURCE_PROFILE_RESOURCE_PROFILE" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_RES_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.fk_SCHEDULER_FREQUENCY_LKUP1" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.fk_SUBSCRIPTION_SUBSCRIPTION_PACKAGE" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.fk_SUBSCRIPTION_PACKAGE_SUBSCRIPTION_PACKAGE_PERIOD" ManuallyRouted="false" />
+        <AssociationConnector Association="ReslandModel.FK_TIMESHEET_LOG_TIMESHEET" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

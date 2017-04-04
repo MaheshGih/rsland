@@ -1,0 +1,83 @@
+﻿@{
+    Layout = null;
+}
+
+@Html.DropDownListFor(x => x.questionAnswersModel.Question, Model.questionAnswersModel.QuestionsSelectList, new { @class = "input-sm hide", id = "template" })
+@model Rland2._0.Models.HomeModel
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> QuestionAnswers </title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name">RLv2</h1>
+
+            </div>
+            <h3>Register to RLv2</h3>
+            <p>Create account to see it in action.</p>
+            @using (Html.BeginForm("QuestionAnspwd", "Home", FormMethod.Post, new { @id = "Questionform" }))
+            {
+                @Html.HiddenFor(x => x.rluserModel.Id)
+                @Html.HiddenFor(x => x.rluserModel.UserName)
+                @Html.HiddenFor(x => x.rluserModel.Password)
+                @Html.HiddenFor(x => x.rluserModel.Type)
+
+                <div class="form-group">
+                    <label class="control-label col-md-5 col-sm-12"> Question </label>
+                    <div class="controls col-md-7 col-sm-12">
+                        @Html.DropDownListFor(x => x.questionAnswersModel.Question, Model.questionAnswersModel.QuestionsSelectList, "--Select One--", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.questionAnswersModel.Question)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-5 col-sm-12">Answer</label>
+                    <div class="controls col-md-7 col-sm-12">
+                        @Html.TextBoxFor(x => x.questionAnswersModel.Answer, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.questionAnswersModel.Answer)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5 col-sm-12">New Password </label>
+                    <div class="controls col-md-7 col-sm-12">
+                        @Html.TextBoxFor(x => x.rluserModel.NewPassword, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.rluserModel.NewPassword)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-5 col-sm-12">Re- Password</label>
+                    <div class="controls col-md-7 col-sm-12">
+                        @Html.TextBoxFor(x => x.rluserModel.ConfirmPassword, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.rluserModel.ConfirmPassword)
+                    </div>
+                </div>
+
+                 <button type="submit" class="btn btn-primary block full-width m-b">Save</button>
+
+            }
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+

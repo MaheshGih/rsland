@@ -1,0 +1,1386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ReslandModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="ACTIVITies">
+      <EntityTypeMapping TypeName="ReslandModel.ACTIVITY">
+        <MappingFragment StoreEntitySet="ACTIVITY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JOB_CANDIDATE_ID" ColumnName="JOB_CANDIDATE_ID" />
+          <ScalarProperty Name="CONTACT_MODE_TYPE" ColumnName="CONTACT_MODE_TYPE" />
+          <ScalarProperty Name="ACTIVITY_TYPE" ColumnName="ACTIVITY_TYPE" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTIVITY_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.ACTIVITY_LKUP">
+        <MappingFragment StoreEntitySet="ACTIVITY_LKUP">
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="LEVEL" ColumnName="LEVEL" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADDRESSes">
+      <EntityTypeMapping TypeName="ReslandModel.ADDRESS">
+        <MappingFragment StoreEntitySet="ADDRESS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ADDR1" ColumnName="ADDR1" />
+          <ScalarProperty Name="ADDR2" ColumnName="ADDR2" />
+          <ScalarProperty Name="ADDR3" ColumnName="ADDR3" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="POSTAL_CD" ColumnName="POSTAL_CD" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="PHONE1" ColumnName="PHONE1" />
+          <ScalarProperty Name="PHONE2" ColumnName="PHONE2" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARTIFACTs">
+      <EntityTypeMapping TypeName="ReslandModel.ARTIFACT">
+        <MappingFragment StoreEntitySet="ARTIFACT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ARTIFACT_TYPE" ColumnName="ARTIFACT_TYPE" />
+          <ScalarProperty Name="RES_ID" ColumnName="RES_ID" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="PATH" ColumnName="PATH" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ARTIFACT_TYPE_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.ARTIFACT_TYPE_LKUP">
+        <MappingFragment StoreEntitySet="ARTIFACT_TYPE_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="RES_ID" ColumnName="RES_ID" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CANDIDATEs">
+      <EntityTypeMapping TypeName="ReslandModel.CANDIDATE">
+        <MappingFragment StoreEntitySet="CANDIDATE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SALUTATION" ColumnName="SALUTATION" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="MIDDLE_NAME" ColumnName="MIDDLE_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="SOCIAL_EMAIL_ID" ColumnName="SOCIAL_EMAIL_ID" />
+          <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ADDR_ID" ColumnName="ADDR_ID" />
+          <ScalarProperty Name="REC_COMP_ID" ColumnName="REC_COMP_ID" />
+          <ScalarProperty Name="RES_ID" ColumnName="RES_ID" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="REF_BY" ColumnName="REF_BY" />
+          <ScalarProperty Name="SKILL_ID" ColumnName="SKILL_ID" />
+          <ScalarProperty Name="NOTIFICATION_ID" ColumnName="NOTIFICATION_ID" />
+          <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+          <ScalarProperty Name="SOURCE_REF_ID" ColumnName="SOURCE_REF_ID" />
+          <ScalarProperty Name="EMPLR_NAME" ColumnName="EMPLR_NAME" />
+          <ScalarProperty Name="OWNER" ColumnName="OWNER" />
+          <ScalarProperty Name="EMPLR_PHONE" ColumnName="EMPLR_PHONE" />
+          <ScalarProperty Name="HOT" ColumnName="HOT" />
+          <ScalarProperty Name="EMP_TYPE_NEEDED" ColumnName="EMP_TYPE_NEEDED" />
+          <ScalarProperty Name="CURR_PAY" ColumnName="CURR_PAY" />
+          <ScalarProperty Name="DESIRED_PAY" ColumnName="DESIRED_PAY" />
+          <ScalarProperty Name="DATE_AVAILABLE" ColumnName="DATE_AVAILABLE" />
+          <ScalarProperty Name="RELOCATE" ColumnName="RELOCATE" />
+          <ScalarProperty Name="RELOC_PREFERENCES" ColumnName="RELOC_PREFERENCES" />
+          <ScalarProperty Name="ETHINIC_TYPE" ColumnName="ETHINIC_TYPE" />
+          <ScalarProperty Name="RESIDENCY" ColumnName="RESIDENCY" />
+          <ScalarProperty Name="VETERAN" ColumnName="VETERAN" />
+          <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+          <ScalarProperty Name="DISABILITY" ColumnName="DISABILITY" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CANDIDATE_SOCIALMEDIA_SELECTED_URLS">
+      <EntityTypeMapping TypeName="ReslandModel.CANDIDATE_SOCIALMEDIA_SELECTED_URLS">
+        <MappingFragment StoreEntitySet="CANDIDATE_SOCIALMEDIA_SELECTED_URLS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CANDIDATE_ID" ColumnName="CANDIDATE_ID" />
+          <ScalarProperty Name="SOCIALMEDIA_SELECTED" ColumnName="SOCIALMEDIA_SELECTED" />
+          <ScalarProperty Name="SOCIALNETWORKING_URL" ColumnName="SOCIALNETWORKING_URL" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CATEGORY_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.CATEGORY_LKUP">
+        <MappingFragment StoreEntitySet="CATEGORY_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTs">
+      <EntityTypeMapping TypeName="ReslandModel.CLIENT">
+        <MappingFragment StoreEntitySet="CLIENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ADDR_ID" ColumnName="ADDR_ID" />
+          <ScalarProperty Name="PHONE_NUM1" ColumnName="PHONE_NUM1" />
+          <ScalarProperty Name="PHONE_NUM2" ColumnName="PHONE_NUM2" />
+          <ScalarProperty Name="FAX_NUM" ColumnName="FAX_NUM" />
+          <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="EIN" ColumnName="EIN" />
+          <ScalarProperty Name="DOMAIN" ColumnName="DOMAIN" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+          <ScalarProperty Name="KEY_TECHNOLOGIES" ColumnName="KEY_TECHNOLOGIES" />
+          <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPANies">
+      <EntityTypeMapping TypeName="ReslandModel.COMPANY">
+        <MappingFragment StoreEntitySet="COMPANY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DBA" ColumnName="DBA" />
+          <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+          <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+          <ScalarProperty Name="ADDR_ID" ColumnName="ADDR_ID" />
+          <ScalarProperty Name="NOTIFICATION_ID" ColumnName="NOTIFICATION_ID" />
+          <ScalarProperty Name="TAX_ID" ColumnName="TAX_ID" />
+          <ScalarProperty Name="TECH_USED" ColumnName="TECH_USED" />
+          <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPANY_CLIENTS">
+      <EntityTypeMapping TypeName="ReslandModel.COMPANY_CLIENTS">
+        <MappingFragment StoreEntitySet="COMPANY_CLIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="IS_ACTIVATED" ColumnName="IS_ACTIVATED" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPANY_HOLIDAY">
+      <EntityTypeMapping TypeName="ReslandModel.COMPANY_HOLIDAY">
+        <MappingFragment StoreEntitySet="COMPANY_HOLIDAY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="HOLIDAY_DT" ColumnName="HOLIDAY_DT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTACT_MODE_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.CONTACT_MODE_LKUP">
+        <MappingFragment StoreEntitySet="CONTACT_MODE_LKUP">
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTRACTORs">
+      <EntityTypeMapping TypeName="ReslandModel.CONTRACTOR">
+        <MappingFragment StoreEntitySet="CONTRACTOR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="MIDDLE_NAME" ColumnName="MIDDLE_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ADDR_ID" ColumnName="ADDR_ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="EMPLR_NAME" ColumnName="EMPLR_NAME" />
+          <ScalarProperty Name="EMPLR_PHONE" ColumnName="EMPLR_PHONE" />
+          <ScalarProperty Name="CONTACT_CONTRACTOR" ColumnName="CONTACT_CONTRACTOR" />
+          <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+          <ScalarProperty Name="SKILL_ID" ColumnName="SKILL_ID" />
+          <ScalarProperty Name="NOTIFICATION_ID" ColumnName="NOTIFICATION_ID" />
+          <ScalarProperty Name="PROSPECTIVE_EMP" ColumnName="PROSPECTIVE_EMP" />
+          <ScalarProperty Name="EMP_TYPE_NEEDED" ColumnName="EMP_TYPE_NEEDED" />
+          <ScalarProperty Name="PYMT_PERIOD" ColumnName="PYMT_PERIOD" />
+          <ScalarProperty Name="CURR_PAY" ColumnName="CURR_PAY" />
+          <ScalarProperty Name="DESIRED_PAY" ColumnName="DESIRED_PAY" />
+          <ScalarProperty Name="DATE_AVAILABLE" ColumnName="DATE_AVAILABLE" />
+          <ScalarProperty Name="REF_BY" ColumnName="REF_BY" />
+          <ScalarProperty Name="RELOCATE" ColumnName="RELOCATE" />
+          <ScalarProperty Name="RELOC_PREFERENCES" ColumnName="RELOC_PREFERENCES" />
+          <ScalarProperty Name="ETHINIC_TYPE" ColumnName="ETHINIC_TYPE" />
+          <ScalarProperty Name="RESIDENCY" ColumnName="RESIDENCY" />
+          <ScalarProperty Name="VETERAN" ColumnName="VETERAN" />
+          <ScalarProperty Name="DISABILITY" ColumnName="DISABILITY" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COUNTRY_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.COUNTRY_LKUP">
+        <MappingFragment StoreEntitySet="COUNTRY_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="SUN_HOL" ColumnName="SUN_HOL" />
+          <ScalarProperty Name="MON_HOL" ColumnName="MON_HOL" />
+          <ScalarProperty Name="TUE_HOL" ColumnName="TUE_HOL" />
+          <ScalarProperty Name="WED_HOL" ColumnName="WED_HOL" />
+          <ScalarProperty Name="THU_HOL" ColumnName="THU_HOL" />
+          <ScalarProperty Name="FRI_HOL" ColumnName="FRI_HOL" />
+          <ScalarProperty Name="SAT_HOL" ColumnName="SAT_HOL" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DURATION_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.DURATION_LKUP">
+        <MappingFragment StoreEntitySet="DURATION_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMAIL_LOG">
+      <EntityTypeMapping TypeName="ReslandModel.EMAIL_LOG">
+        <MappingFragment StoreEntitySet="EMAIL_LOG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SESSION_ID" ColumnName="SESSION_ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="EMAIL_TO" ColumnName="EMAIL_TO" />
+          <ScalarProperty Name="EMAIL_FROM" ColumnName="EMAIL_FROM" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="TEMPLATETYPE" ColumnName="TEMPLATETYPE" />
+          <ScalarProperty Name="REPLACED_TEXT" ColumnName="REPLACED_TEXT" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEEs">
+      <EntityTypeMapping TypeName="ReslandModel.EMPLOYEE">
+        <MappingFragment StoreEntitySet="EMPLOYEE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="MIDDLE_NAME" ColumnName="MIDDLE_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="COMP_EMP_ID" ColumnName="COMP_EMP_ID" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ADDR_ID" ColumnName="ADDR_ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="PLACED_AT_CLIENT" ColumnName="PLACED_AT_CLIENT" />
+          <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+          <ScalarProperty Name="NOTIFICATION_ID" ColumnName="NOTIFICATION_ID" />
+          <ScalarProperty Name="RELOCATE" ColumnName="RELOCATE" />
+          <ScalarProperty Name="RELOC_PREFERENCES" ColumnName="RELOC_PREFERENCES" />
+          <ScalarProperty Name="CONTACT_EMPLOYER" ColumnName="CONTACT_EMPLOYER" />
+          <ScalarProperty Name="SKILL_ID" ColumnName="SKILL_ID" />
+          <ScalarProperty Name="ETHINIC_TYPE" ColumnName="ETHINIC_TYPE" />
+          <ScalarProperty Name="RESIDENCY" ColumnName="RESIDENCY" />
+          <ScalarProperty Name="VETERAN" ColumnName="VETERAN" />
+          <ScalarProperty Name="DISABILITY" ColumnName="DISABILITY" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ETHINIC_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.ETHINIC_LKUP">
+        <MappingFragment StoreEntitySet="ETHINIC_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FEATURE_ACCESS">
+      <EntityTypeMapping TypeName="ReslandModel.FEATURE_ACCESS">
+        <MappingFragment StoreEntitySet="FEATURE_ACCESS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FEATURE_ID" ColumnName="FEATURE_ID" />
+          <ScalarProperty Name="SCREEN_ID" ColumnName="SCREEN_ID" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FEATURE_SCREEN">
+      <EntityTypeMapping TypeName="ReslandModel.FEATURE_SCREEN">
+        <MappingFragment StoreEntitySet="FEATURE_SCREEN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FEATURE_ID" ColumnName="FEATURE_ID" />
+          <ScalarProperty Name="SCREEN_NAME" ColumnName="SCREEN_NAME" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FREQUENCY_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.FREQUENCY_LKUP">
+        <MappingFragment StoreEntitySet="FREQUENCY_LKUP">
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOURS_LOGGED">
+      <EntityTypeMapping TypeName="ReslandModel.HOURS_LOGGED">
+        <MappingFragment StoreEntitySet="HOURS_LOGGED">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TIMESHEET_ID" ColumnName="TIMESHEET_ID" />
+          <ScalarProperty Name="PROJ_ID" ColumnName="PROJ_ID" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="SUN_HRS" ColumnName="SUN_HRS" />
+          <ScalarProperty Name="MON_HRS" ColumnName="MON_HRS" />
+          <ScalarProperty Name="TUE_HRS" ColumnName="TUE_HRS" />
+          <ScalarProperty Name="WED_HRS" ColumnName="WED_HRS" />
+          <ScalarProperty Name="THU_HRS" ColumnName="THU_HRS" />
+          <ScalarProperty Name="FRI_HRS" ColumnName="FRI_HRS" />
+          <ScalarProperty Name="SAT_HRS" ColumnName="SAT_HRS" />
+          <ScalarProperty Name="WORKED_ON_HOLIDAY" ColumnName="WORKED_ON_HOLIDAY" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INVOICEs">
+      <EntityTypeMapping TypeName="ReslandModel.INVOICE">
+        <MappingFragment StoreEntitySet="INVOICE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SUBSCRIPTION_ID" ColumnName="SUBSCRIPTION_ID" />
+          <ScalarProperty Name="SUBSCR_PKG_ID" ColumnName="SUBSCR_PKG_ID" />
+          <ScalarProperty Name="START_DT" ColumnName="START_DT" />
+          <ScalarProperty Name="END_DT" ColumnName="END_DT" />
+          <ScalarProperty Name="AMT_DUE" ColumnName="AMT_DUE" />
+          <ScalarProperty Name="AMT_PAID" ColumnName="AMT_PAID" />
+          <ScalarProperty Name="AMT_ADJ" ColumnName="AMT_ADJ" />
+          <ScalarProperty Name="DISCOUNT_ADJ" ColumnName="DISCOUNT_ADJ" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JOBs">
+      <EntityTypeMapping TypeName="ReslandModel.JOB">
+        <MappingFragment StoreEntitySet="JOB">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="POSTED_BY" ColumnName="POSTED_BY" />
+          <ScalarProperty Name="POSTED_BY_ID" ColumnName="POSTED_BY_ID" />
+          <ScalarProperty Name="CONTACT_NAME" ColumnName="CONTACT_NAME" />
+          <ScalarProperty Name="CONTACT_PHONE" ColumnName="CONTACT_PHONE" />
+          <ScalarProperty Name="CONTACT_EMAIL" ColumnName="CONTACT_EMAIL" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="PREREQUISITES" ColumnName="PREREQUISITES" />
+          <ScalarProperty Name="JOB_TYPE" ColumnName="JOB_TYPE" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="DURATION" ColumnName="DURATION" />
+          <ScalarProperty Name="POST_DT" ColumnName="POST_DT" />
+          <ScalarProperty Name="POST_END_DT" ColumnName="POST_END_DT" />
+          <ScalarProperty Name="POSITIONS_CNT" ColumnName="POSITIONS_CNT" />
+          <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+          <ScalarProperty Name="MAX_RATE" ColumnName="MAX_RATE" />
+          <ScalarProperty Name="MIN_RATE" ColumnName="MIN_RATE" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+          <ScalarProperty Name="SKILL_ID" ColumnName="SKILL_ID" />
+          <ScalarProperty Name="PERKS" ColumnName="PERKS" />
+          <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+          <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+          <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+          <ScalarProperty Name="HOT" ColumnName="HOT" />
+          <ScalarProperty Name="PUBLISH" ColumnName="PUBLISH" />
+          <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+          <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+          <ScalarProperty Name="RECRUITER" ColumnName="RECRUITER" />
+          <ScalarProperty Name="VENDOR_TYPE" ColumnName="VENDOR_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JOB_APPLICATION">
+      <EntityTypeMapping TypeName="ReslandModel.JOB_APPLICATION">
+        <MappingFragment StoreEntitySet="JOB_APPLICATION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JOB_POSTING_ID" ColumnName="JOB_POSTING_ID" />
+          <ScalarProperty Name="RES_ID" ColumnName="RES_ID" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="APPLIED_DT" ColumnName="APPLIED_DT" />
+          <ScalarProperty Name="REQ_RATE" ColumnName="REQ_RATE" />
+          <ScalarProperty Name="RESUME" ColumnName="RESUME" />
+          <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JOB_CANDIDATE">
+      <EntityTypeMapping TypeName="ReslandModel.JOB_CANDIDATE">
+        <MappingFragment StoreEntitySet="JOB_CANDIDATE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+          <ScalarProperty Name="CANDIDATE_ID" ColumnName="CANDIDATE_ID" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JOB_POSTING">
+      <EntityTypeMapping TypeName="ReslandModel.JOB_POSTING">
+        <MappingFragment StoreEntitySet="JOB_POSTING">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JOB_TYPE_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.JOB_TYPE_LKUP">
+        <MappingFragment StoreEntitySet="JOB_TYPE_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOTIFICATIONs">
+      <EntityTypeMapping TypeName="ReslandModel.NOTIFICATION">
+        <MappingFragment StoreEntitySet="NOTIFICATION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOTIFY_BY_EMAIL" ColumnName="NOTIFY_BY_EMAIL" />
+          <ScalarProperty Name="PRI_EMAIL_ID" ColumnName="PRI_EMAIL_ID" />
+          <ScalarProperty Name="SEC_EMAIL_ID" ColumnName="SEC_EMAIL_ID" />
+          <ScalarProperty Name="NOTIFY_BY_PHONE" ColumnName="NOTIFY_BY_PHONE" />
+          <ScalarProperty Name="PHONE_NUM" ColumnName="PHONE_NUM" />
+          <ScalarProperty Name="BEST_TIME" ColumnName="BEST_TIME" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PACKAGE_FEATURE">
+      <EntityTypeMapping TypeName="ReslandModel.PACKAGE_FEATURE">
+        <MappingFragment StoreEntitySet="PACKAGE_FEATURE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SUBSCR_PKG_ID" ColumnName="SUBSCR_PKG_ID" />
+          <ScalarProperty Name="FEATURE_ID" ColumnName="FEATURE_ID" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYMENT_PERIOD_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.PAYMENT_PERIOD_LKUP">
+        <MappingFragment StoreEntitySet="PAYMENT_PERIOD_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYMENT_TYPE_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.PAYMENT_TYPE_LKUP">
+        <MappingFragment StoreEntitySet="PAYMENT_TYPE_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERIOD_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.PERIOD_LKUP">
+        <MappingFragment StoreEntitySet="PERIOD_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POSTING_SUBMISSION">
+      <EntityTypeMapping TypeName="ReslandModel.POSTING_SUBMISSION">
+        <MappingFragment StoreEntitySet="POSTING_SUBMISSION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="POSTING_ID" ColumnName="POSTING_ID" />
+          <ScalarProperty Name="POSTING_TYPE" ColumnName="POSTING_TYPE" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="RES_ID" ColumnName="RES_ID" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="START_DT" ColumnName="START_DT" />
+          <ScalarProperty Name="END_DT" ColumnName="END_DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROCESSING_STATE_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.PROCESSING_STATE_LKUP">
+        <MappingFragment StoreEntitySet="PROCESSING_STATE_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROJECTs">
+      <EntityTypeMapping TypeName="ReslandModel.PROJECT">
+        <MappingFragment StoreEntitySet="PROJECT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="MANAGER" ColumnName="MANAGER" />
+          <ScalarProperty Name="MGR_PHONE" ColumnName="MGR_PHONE" />
+          <ScalarProperty Name="START_DT" ColumnName="START_DT" />
+          <ScalarProperty Name="END_DT" ColumnName="END_DT" />
+          <ScalarProperty Name="BUDGET" ColumnName="BUDGET" />
+          <ScalarProperty Name="TECH_USED" ColumnName="TECH_USED" />
+          <ScalarProperty Name="CLIENT_PROJECT" ColumnName="CLIENT_PROJECT" />
+          <ScalarProperty Name="SPONSOR_ID" ColumnName="SPONSOR_ID" />
+          <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROJECT_RESOURCE">
+      <EntityTypeMapping TypeName="ReslandModel.PROJECT_RESOURCE">
+        <MappingFragment StoreEntitySet="PROJECT_RESOURCE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROJ_ID" ColumnName="PROJ_ID" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="RES_COUNT" ColumnName="RES_COUNT" />
+          <ScalarProperty Name="SKILLS_NEEDED" ColumnName="SKILLS_NEEDED" />
+          <ScalarProperty Name="EXP_RATE" ColumnName="EXP_RATE" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QUESTION_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.QUESTION_LKUP">
+        <MappingFragment StoreEntitySet="QUESTION_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="QUESTION" ColumnName="QUESTION" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESIDENCY_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.RESIDENCY_LKUP">
+        <MappingFragment StoreEntitySet="RESIDENCY_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESOURCE_PRIVILEGE_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.RESOURCE_PRIVILEGE_LKUP">
+        <MappingFragment StoreEntitySet="RESOURCE_PRIVILEGE_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="PRIVILEGE" ColumnName="PRIVILEGE" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESOURCE_PROFILE">
+      <EntityTypeMapping TypeName="ReslandModel.RESOURCE_PROFILE">
+        <MappingFragment StoreEntitySet="RESOURCE_PROFILE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="RES_ID" ColumnName="RES_ID" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="EMPLOYMENT_TYPE" ColumnName="EMPLOYMENT_TYPE" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="EXPERIENCE" ColumnName="EXPERIENCE" />
+          <ScalarProperty Name="WORK_COMPANY_NAME" ColumnName="WORK_COMPANY_NAME" />
+          <ScalarProperty Name="WORK_LOCATION" ColumnName="WORK_LOCATION" />
+          <ScalarProperty Name="START_DT" ColumnName="START_DT" />
+          <ScalarProperty Name="END_DT" ColumnName="END_DT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESOURCE_TYPE_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.RESOURCE_TYPE_LKUP">
+        <MappingFragment StoreEntitySet="RESOURCE_TYPE_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="ADMIN_ACCESS" ColumnName="ADMIN_ACCESS" />
+          <ScalarProperty Name="LOGIN_ACCESS" ColumnName="LOGIN_ACCESS" />
+          <ScalarProperty Name="TIMESHEET_ACCESS" ColumnName="TIMESHEET_ACCESS" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RL_FEATURE">
+      <EntityTypeMapping TypeName="ReslandModel.RL_FEATURE">
+        <MappingFragment StoreEntitySet="RL_FEATURE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FEATURE" ColumnName="FEATURE" />
+          <ScalarProperty Name="AVAILABLE" ColumnName="AVAILABLE" />
+          <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+          <ScalarProperty Name="COST" ColumnName="COST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RL_LOG">
+      <EntityTypeMapping TypeName="ReslandModel.RL_LOG">
+        <MappingFragment StoreEntitySet="RL_LOG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="SESSION_ID" ColumnName="SESSION_ID" />
+          <ScalarProperty Name="ACTION" ColumnName="ACTION" />
+          <ScalarProperty Name="PREV_STATE" ColumnName="PREV_STATE" />
+          <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RL_USER_LOG_DETAILS">
+      <EntityTypeMapping TypeName="ReslandModel.RL_USER_LOG_DETAILS">
+        <MappingFragment StoreEntitySet="RL_USER_LOG_DETAILS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RL_USER_ID" ColumnName="RL_USER_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="LOGIN_TIME" ColumnName="LOGIN_TIME" />
+          <ScalarProperty Name="LOGOUT_TIME" ColumnName="LOGOUT_TIME" />
+          <ScalarProperty Name="IP_ADDR" ColumnName="IP_ADDR" />
+          <ScalarProperty Name="BROWSER" ColumnName="BROWSER" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RL_USER_LOGIN_ATTEMPT">
+      <EntityTypeMapping TypeName="ReslandModel.RL_USER_LOGIN_ATTEMPT">
+        <MappingFragment StoreEntitySet="RL_USER_LOGIN_ATTEMPT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="LOGIN_ATTEMPT_CNT" ColumnName="LOGIN_ATTEMPT_CNT" />
+          <ScalarProperty Name="MAX_ATTEMPT_CNT" ColumnName="MAX_ATTEMPT_CNT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RL_USER_TRACK_LOGGING">
+      <EntityTypeMapping TypeName="ReslandModel.RL_USER_TRACK_LOGGING">
+        <MappingFragment StoreEntitySet="RL_USER_TRACK_LOGGING">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="LOGIN_TIME" ColumnName="LOGIN_TIME" />
+          <ScalarProperty Name="LOGOUT_TIME" ColumnName="LOGOUT_TIME" />
+          <ScalarProperty Name="HOW_LOGOUT" ColumnName="HOW_LOGOUT" />
+          <ScalarProperty Name="IP_ADDR" ColumnName="IP_ADDR" />
+          <ScalarProperty Name="BROWSER" ColumnName="BROWSER" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+          <ScalarProperty Name="SESSION_ID" ColumnName="SESSION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RL_USERS">
+      <EntityTypeMapping TypeName="ReslandModel.RL_USERS">
+        <MappingFragment StoreEntitySet="RL_USERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="PWD" ColumnName="PWD" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="NOTIFICATION_ID" ColumnName="NOTIFICATION_ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="USER_ACTIVATED" ColumnName="USER_ACTIVATED" />
+          <ScalarProperty Name="ACCT_LOCKED" ColumnName="ACCT_LOCKED" />
+          <ScalarProperty Name="QNO_1" ColumnName="QNO_1" />
+          <ScalarProperty Name="ANS_1" ColumnName="ANS_1" />
+          <ScalarProperty Name="HNT_1" ColumnName="HNT_1" />
+          <ScalarProperty Name="QNO_2" ColumnName="QNO_2" />
+          <ScalarProperty Name="ANS_2" ColumnName="ANS_2" />
+          <ScalarProperty Name="HNT_2" ColumnName="HNT_2" />
+          <ScalarProperty Name="QNO_3" ColumnName="QNO_3" />
+          <ScalarProperty Name="ANS_3" ColumnName="ANS_3" />
+          <ScalarProperty Name="HNT_3" ColumnName="HNT_3" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLE_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.ROLE_LKUP">
+        <MappingFragment StoreEntitySet="ROLE_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SCHEDULER_EXECUTION_LOG">
+      <EntityTypeMapping TypeName="ReslandModel.SCHEDULER_EXECUTION_LOG">
+        <MappingFragment StoreEntitySet="SCHEDULER_EXECUTION_LOG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMMUNICATION_MODE" ColumnName="COMMUNICATION_MODE" />
+          <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="RES_ID" ColumnName="RES_ID" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="SCHEDULER_ID" ColumnName="SCHEDULER_ID" />
+          <ScalarProperty Name="EXECUTION_START_TIME" ColumnName="EXECUTION_START_TIME" />
+          <ScalarProperty Name="EXECUTION_END_TIME" ColumnName="EXECUTION_END_TIME" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="STAT_MSG" ColumnName="STAT_MSG" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SCHEDULER_FREQUENCY">
+      <EntityTypeMapping TypeName="ReslandModel.SCHEDULER_FREQUENCY">
+        <MappingFragment StoreEntitySet="SCHEDULER_FREQUENCY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="SCHEDULER_TYPE" ColumnName="SCHEDULER_TYPE" />
+          <ScalarProperty Name="FREQUENCY_TYPE" ColumnName="FREQUENCY_TYPE" />
+          <ScalarProperty Name="TRIGGER_START_TIME" ColumnName="TRIGGER_START_TIME" />
+          <ScalarProperty Name="INTERVAL" ColumnName="INTERVAL" />
+          <ScalarProperty Name="INTERVAL_DURATION" ColumnName="INTERVAL_DURATION" />
+          <ScalarProperty Name="SCHEDULE_SUN" ColumnName="SCHEDULE_SUN" />
+          <ScalarProperty Name="SCHEDULE_MON" ColumnName="SCHEDULE_MON" />
+          <ScalarProperty Name="SCHEDULE_TUE" ColumnName="SCHEDULE_TUE" />
+          <ScalarProperty Name="SCHEDULE_WED" ColumnName="SCHEDULE_WED" />
+          <ScalarProperty Name="SCHEDULE_THU" ColumnName="SCHEDULE_THU" />
+          <ScalarProperty Name="SCHEDULE_FRI" ColumnName="SCHEDULE_FRI" />
+          <ScalarProperty Name="SCHEDULE_SAT" ColumnName="SCHEDULE_SAT" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SCHEDULER_TYPE_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.SCHEDULER_TYPE_LKUP">
+        <MappingFragment StoreEntitySet="SCHEDULER_TYPE_LKUP">
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SCREEN_ACTION">
+      <EntityTypeMapping TypeName="ReslandModel.SCREEN_ACTION">
+        <MappingFragment StoreEntitySet="SCREEN_ACTION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SCREEN_NAME" ColumnName="SCREEN_NAME" />
+          <ScalarProperty Name="ACTION" ColumnName="ACTION" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETTINGS">
+      <EntityTypeMapping TypeName="ReslandModel.SETTING">
+        <MappingFragment StoreEntitySet="SETTINGS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SESSION_TIMEOUT_IN_MINS" ColumnName="SESSION_TIMEOUT_IN_MINS" />
+          <ScalarProperty Name="SMTP_CLIENT" ColumnName="SMTP_CLIENT" />
+          <ScalarProperty Name="SMTP_PORT" ColumnName="SMTP_PORT" />
+          <ScalarProperty Name="ENABLE_SSL" ColumnName="ENABLE_SSL" />
+          <ScalarProperty Name="USE_DEFAULT_CREDENTIALS" ColumnName="USE_DEFAULT_CREDENTIALS" />
+          <ScalarProperty Name="ADDR1_ID" ColumnName="ADDR1_ID" />
+          <ScalarProperty Name="ADDR2_ID" ColumnName="ADDR2_ID" />
+          <ScalarProperty Name="PUBLIC_MSG" ColumnName="PUBLIC_MSG" />
+          <ScalarProperty Name="MSG_EFF_FROM" ColumnName="MSG_EFF_FROM" />
+          <ScalarProperty Name="MSG_EFF_TO" ColumnName="MSG_EFF_TO" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIGNATUREs">
+      <EntityTypeMapping TypeName="ReslandModel.SIGNATURE">
+        <MappingFragment StoreEntitySet="SIGNATURE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="RES_ID" ColumnName="RES_ID" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="SIGNATURE_CONTENT" ColumnName="SIGNATURE_CONTENT" />
+          <ScalarProperty Name="SIGNATURE_TYPE" ColumnName="SIGNATURE_TYPE" />
+          <ScalarProperty Name="IS_DEFAULT" ColumnName="IS_DEFAULT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SKILLs">
+      <EntityTypeMapping TypeName="ReslandModel.SKILL">
+        <MappingFragment StoreEntitySet="SKILL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TECH_SKILLS" ColumnName="TECH_SKILLS" />
+          <ScalarProperty Name="SOFT_SKILLS" ColumnName="SOFT_SKILLS" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SKILL_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.SKILL_LKUP">
+        <MappingFragment StoreEntitySet="SKILL_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMTP_CLIENT">
+      <EntityTypeMapping TypeName="ReslandModel.SMTP_CLIENT">
+        <MappingFragment StoreEntitySet="SMTP_CLIENT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MSG_TYPE" ColumnName="MSG_TYPE" />
+          <ScalarProperty Name="SMTP_CLIENT1" ColumnName="SMTP_CLIENT1" />
+          <ScalarProperty Name="SMTP_PORT" ColumnName="SMTP_PORT" />
+          <ScalarProperty Name="ENABLE_SSL" ColumnName="ENABLE_SSL" />
+          <ScalarProperty Name="REQ_AUTHENTICATION" ColumnName="REQ_AUTHENTICATION" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="PWD" ColumnName="PWD" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOCIALMEDIA_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.SOCIALMEDIA_LKUP">
+        <MappingFragment StoreEntitySet="SOCIALMEDIA_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SOCIALMEDIA_NAME" ColumnName="SOCIALMEDIA_NAME" />
+          <ScalarProperty Name="SOCIALMEDIA_URL" ColumnName="SOCIALMEDIA_URL" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOURCE_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.SOURCE_LKUP">
+        <MappingFragment StoreEntitySet="SOURCE_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SOURCE" ColumnName="SOURCE" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STATUS_LKUP">
+      <EntityTypeMapping TypeName="ReslandModel.STATUS_LKUP">
+        <MappingFragment StoreEntitySet="STATUS_LKUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUBMISSION_STATUS">
+      <EntityTypeMapping TypeName="ReslandModel.SUBMISSION_STATUS">
+        <MappingFragment StoreEntitySet="SUBMISSION_STATUS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="POSTING_SUBMISSION_ID" ColumnName="POSTING_SUBMISSION_ID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="INTERVIEW_DT" ColumnName="INTERVIEW_DT" />
+          <ScalarProperty Name="INTERVIEW_TIME" ColumnName="INTERVIEW_TIME" />
+          <ScalarProperty Name="INTERVIEWER" ColumnName="INTERVIEWER" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
+          <ScalarProperty Name="INTERVIEWER_RATING" ColumnName="INTERVIEWER_RATING" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUBSCRIBERs">
+      <EntityTypeMapping TypeName="ReslandModel.SUBSCRIBER">
+        <MappingFragment StoreEntitySet="SUBSCRIBER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="MIDDLE_NAME" ColumnName="MIDDLE_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="ADDR_ID" ColumnName="ADDR_ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="NOTIFICATION_ID" ColumnName="NOTIFICATION_ID" />
+          <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+          <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUBSCRIPTIONs">
+      <EntityTypeMapping TypeName="ReslandModel.SUBSCRIPTION">
+        <MappingFragment StoreEntitySet="SUBSCRIPTION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="SUBSCR_PKG_ID" ColumnName="SUBSCR_PKG_ID" />
+          <ScalarProperty Name="TRIAL_START_DT" ColumnName="TRIAL_START_DT" />
+          <ScalarProperty Name="EFF_FROM" ColumnName="EFF_FROM" />
+          <ScalarProperty Name="EFF_TO" ColumnName="EFF_TO" />
+          <ScalarProperty Name="PYMT_NUM" ColumnName="PYMT_NUM" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUBSCRIPTION_PACKAGE">
+      <EntityTypeMapping TypeName="ReslandModel.SUBSCRIPTION_PACKAGE">
+        <MappingFragment StoreEntitySet="SUBSCRIPTION_PACKAGE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SPKG_PERIOD_ID" ColumnName="SPKG_PERIOD_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PERIOD" ColumnName="PERIOD" />
+          <ScalarProperty Name="USD_COST" ColumnName="USD_COST" />
+          <ScalarProperty Name="EUR_COST" ColumnName="EUR_COST" />
+          <ScalarProperty Name="UK_COST" ColumnName="UK_COST" />
+          <ScalarProperty Name="INR_COST" ColumnName="INR_COST" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUBSCRIPTION_PACKAGE_PERIOD">
+      <EntityTypeMapping TypeName="ReslandModel.SUBSCRIPTION_PACKAGE_PERIOD">
+        <MappingFragment StoreEntitySet="SUBSCRIPTION_PACKAGE_PERIOD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EFF_FROM" ColumnName="EFF_FROM" />
+          <ScalarProperty Name="EFF_TO" ColumnName="EFF_TO" />
+          <ScalarProperty Name="TRIAL" ColumnName="TRIAL" />
+          <ScalarProperty Name="PKG_CNT" ColumnName="PKG_CNT" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEMPLATEs">
+      <EntityTypeMapping TypeName="ReslandModel.TEMPLATE">
+        <MappingFragment StoreEntitySet="TEMPLATE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="EMAIL_TO" ColumnName="EMAIL_TO" />
+          <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="PWD" ColumnName="PWD" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIMESHEETs">
+      <EntityTypeMapping TypeName="ReslandModel.TIMESHEET">
+        <MappingFragment StoreEntitySet="TIMESHEET">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="WEEK_CAL_ID" ColumnName="WEEK_CAL_ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="RES_ID" ColumnName="RES_ID" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIMESHEET_LOG">
+      <EntityTypeMapping TypeName="ReslandModel.TIMESHEET_LOG">
+        <MappingFragment StoreEntitySet="TIMESHEET_LOG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TIMESHEET_ID" ColumnName="TIMESHEET_ID" />
+          <ScalarProperty Name="WORKFLOW_ID" ColumnName="WORKFLOW_ID" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIMESHEET_WORKFLOW">
+      <EntityTypeMapping TypeName="ReslandModel.TIMESHEET_WORKFLOW">
+        <MappingFragment StoreEntitySet="TIMESHEET_WORKFLOW">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ORG_RES_TYPE" ColumnName="ORG_RES_TYPE" />
+          <ScalarProperty Name="PREV_STATE" ColumnName="PREV_STATE" />
+          <ScalarProperty Name="ACTION" ColumnName="ACTION" />
+          <ScalarProperty Name="NEXT_STATE" ColumnName="NEXT_STATE" />
+          <ScalarProperty Name="NEXT_RES_TYPE" ColumnName="NEXT_RES_TYPE" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_DETAILS">
+      <EntityTypeMapping TypeName="ReslandModel.USER_DETAILS">
+        <MappingFragment StoreEntitySet="USER_DETAILS">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+          <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="ReslandModel.USER">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RES_ID" ColumnName="RES_ID" />
+          <ScalarProperty Name="RES_TYPE" ColumnName="RES_TYPE" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="PWD" ColumnName="PWD" />
+          <ScalarProperty Name="USER_ACTIVATED" ColumnName="USER_ACTIVATED" />
+          <ScalarProperty Name="QNO_1" ColumnName="QNO_1" />
+          <ScalarProperty Name="ANS_1" ColumnName="ANS_1" />
+          <ScalarProperty Name="QNO_2" ColumnName="QNO_2" />
+          <ScalarProperty Name="ANS_2" ColumnName="ANS_2" />
+          <ScalarProperty Name="QNO_3" ColumnName="QNO_3" />
+          <ScalarProperty Name="ANS_3" ColumnName="ANS_3" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VENDORs">
+      <EntityTypeMapping TypeName="ReslandModel.VENDOR">
+        <MappingFragment StoreEntitySet="VENDOR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="ADDR_ID" ColumnName="ADDR_ID" />
+          <ScalarProperty Name="PHONE_NUM1" ColumnName="PHONE_NUM1" />
+          <ScalarProperty Name="PHONE_NUM2" ColumnName="PHONE_NUM2" />
+          <ScalarProperty Name="FAX_NUM" ColumnName="FAX_NUM" />
+          <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+          <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+          <ScalarProperty Name="DOMAIN" ColumnName="DOMAIN" />
+          <ScalarProperty Name="STAT" ColumnName="STAT" />
+          <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WEEK_CALENDER">
+      <EntityTypeMapping TypeName="ReslandModel.WEEK_CALENDER">
+        <MappingFragment StoreEntitySet="WEEK_CALENDER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+          <ScalarProperty Name="WEEK_NUM" ColumnName="WEEK_NUM" />
+          <ScalarProperty Name="WEEK_START_DT" ColumnName="WEEK_START_DT" />
+          <ScalarProperty Name="WEEK_END_DT" ColumnName="WEEK_END_DT" />
+          <ScalarProperty Name="IS_DELETED" ColumnName="IS_DELETED" />
+          <ScalarProperty Name="CR_BY" ColumnName="CR_BY" />
+          <ScalarProperty Name="DT_CR" ColumnName="DT_CR" />
+          <ScalarProperty Name="MOD_BY" ColumnName="MOD_BY" />
+          <ScalarProperty Name="DT_MOD" ColumnName="DT_MOD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
